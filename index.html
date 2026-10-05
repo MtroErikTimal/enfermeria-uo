@@ -4,6 +4,315 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#102a43">
+  <meta name="description" content="Espacio educativo de la Licenciatura en Enfermería de la Universidad de Oriente. Recursos, fundamentos, procedimientos y evaluaciones.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Enfermería UO">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./estilos.css">
+  <title>Licenciatura en Enfermería · Universidad de Oriente</title>
+  <script src="./temas.js" defer></script>
+  <script src="./procedimientos.js" defer></script>
+  <script src="./evaluaciones.js" defer></script>
+  <script src="./recursos.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <header class="site-header">
+    <div class="institutional-bar">
+      <div class="container institutional-bar__inner">
+        <p>Formación con conocimiento, ética y vocación de servicio</p>
+        <a href="#acerca">Licenciatura en Enfermería · Universidad de Oriente</a>
+      </div>
+    </div>
+    <div class="container masthead">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand__logos">
+          <span class="logo-slot logo-slot--university">
+            <img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente">
+          </span>
+          <span class="brand__divider" aria-hidden="true"></span>
+          <span class="logo-slot logo-slot--nursing">
+            <img src="./img/logo-enfermeria.png" alt="Logotipo de la Licenciatura en Enfermería">
+          </span>
+        </span>
+        <span class="brand__copy">
+          <strong>Universidad de Oriente</strong>
+          <span>Licenciatura en Enfermería</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="button button--subtle header-quick-link" href="#fundamentos">Explorar asignatura <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Abrir menú de navegación">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
+      <div class="container primary-nav__inner">
+        <a href="#inicio">Inicio</a>
+        <a href="#asignaturas">Asignaturas</a>
+        <a href="#fundamentos">Fundamentos de Enfermería I</a>
+        <a href="#procedimientos">Procedimientos</a>
+        <a href="#materiales">Material de estudio</a>
+        <a href="#evaluaciones">Evaluaciones</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#acerca">Acerca de</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero section-shell" id="inicio" aria-labelledby="heroTitle">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true"></span> Licenciatura en Enfermería · Universidad de Oriente</p>
+          <h1 id="heroTitle">Aprender a cuidar.<br><span>Cuidar con conocimiento.</span></h1>
+          <p class="hero__intro">Un espacio académico para construir fundamentos, fortalecer habilidades clínicas y acompañar tu formación como profesional de Enfermería.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#fundamentos">Explorar Fundamentos I <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#acerca">Conoce el espacio académico <span aria-hidden="true">↗</span></a>
+          </div>
+          <button class="button button--subtle install-app" id="installApp" type="button" hidden>Instalar en este dispositivo</button>
+          <p class="install-help" id="installInstructions">En iPhone o iPad: abre Compartir en Safari y selecciona «Agregar a inicio».</p>
+          <div class="hero__trust">
+            <span class="trust-mark" aria-hidden="true">✳</span>
+            <p>Aprendizaje centrado en el cuidado, la evidencia y la persona.</p>
+          </div>
+        </div>
+        <div class="hero-visual" role="img" aria-label="Ilustración académica de enfermería; espacio preparado para una fotografía institucional">
+          <div class="hero-visual__label"><span></span> Conocimiento que acompaña el cuidado</div>
+          <div class="hero-visual__scene" aria-hidden="true">
+            <div class="scene-orbit scene-orbit--one"></div>
+            <div class="scene-orbit scene-orbit--two"></div>
+            <div class="scene-person">
+              <span class="scene-person__head"></span>
+              <span class="scene-person__body"><i>+</i></span>
+              <span class="scene-person__arm"></span>
+            </div>
+            <div class="scene-heart"><span>+</span></div>
+            <div class="scene-caption"><strong>El cuidado</strong><span>como encuentro humano</span></div>
+            <span class="scene-star scene-star--one">✳</span><span class="scene-star scene-star--two">✳</span>
+          </div>
+          <p class="hero-visual__note">Espacio para fotografía institucional</p>
+        </div>
+      </div>
+      <div class="container hero__footer">
+        <span>Aprendizaje para la práctica</span><span class="hero__footer-rule"></span><span>Formación universitaria</span><span class="hero__footer-rule"></span><span>Vocación de servicio</span>
+      </div>
+    </section>
+
+    <section class="welcome-section section-shell" aria-labelledby="welcomeTitle">
+      <div class="container welcome-grid">
+        <div>
+          <p class="eyebrow">Bienvenida</p>
+          <h2 id="welcomeTitle">Una formación que empieza <span>con buenos fundamentos.</span></h2>
+        </div>
+        <div class="welcome-copy">
+          <p>Te damos la bienvenida a este espacio educativo de la Licenciatura en Enfermería de la Universidad de Oriente. Aquí encontrarás materiales de apoyo para estudiar, practicar y reflexionar sobre el cuidado profesional.</p>
+          <p>Los contenidos iniciales corresponden a <strong>Fundamentos de Enfermería I</strong>. Se presentan como recursos didácticos y deben complementarse con la guía docente, los protocolos institucionales y las fuentes académicas indicadas en tu curso.</p>
+          <a class="text-link" href="#asignaturas">Conoce las asignaturas <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-section section-shell" id="asignaturas" aria-labelledby="quickTitle">
+      <div class="container">
+        <div class="section-heading section-heading--row">
+          <div><p class="eyebrow">Tu espacio de aprendizaje</p><h2 id="quickTitle">Continúa desde aquí</h2></div>
+          <p class="section-heading__aside">Accesos rápidos al material de estudio, la práctica y tu autoevaluación.</p>
+        </div>
+        <div class="quick-grid">
+          <a class="quick-card quick-card--featured" href="#fundamentos">
+            <span class="quick-card__icon" aria-hidden="true">01</span><span class="quick-card__meta">Asignatura inicial</span>
+            <strong>Fundamentos de Enfermería I</strong><span class="quick-card__foot">Explorar los 17 temas <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="quick-card" href="#procedimientos">
+            <span class="quick-card__icon quick-card__icon--blue" aria-hidden="true">02</span><span class="quick-card__meta">Aprendizaje práctico</span>
+            <strong>Procedimientos</strong><span class="quick-card__foot">Revisar guías paso a paso <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="quick-card" href="#evaluaciones">
+            <span class="quick-card__icon quick-card__icon--gold" aria-hidden="true">03</span><span class="quick-card__meta">Comprueba lo aprendido</span>
+            <strong>Evaluaciones</strong><span class="quick-card__foot">Iniciar autoevaluación <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="quick-card" href="#recursos">
+            <span class="quick-card__icon quick-card__icon--rose" aria-hidden="true">04</span><span class="quick-card__meta">Material de apoyo</span>
+            <strong>Biblioteca de recursos</strong><span class="quick-card__foot">Explorar materiales <span aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+        <div class="course-catalog" id="courseGrid" aria-label="Catálogo de asignaturas"></div>
+      </div>
+    </section>
+
+    <section class="course-section section-shell section-shell--tinted" id="fundamentos" aria-labelledby="courseTitle">
+      <div class="container">
+        <div class="course-banner">
+          <div class="course-banner__copy">
+            <p class="eyebrow eyebrow--light">Asignatura · Primer recorrido</p>
+            <h2 id="courseTitle">Fundamentos de Enfermería I</h2>
+            <p>Conceptos esenciales para comprender el cuidado y desarrollar habilidades seguras, respetuosas y basadas en principios profesionales.</p>
+            <a class="button button--light" href="#temas">Explorar contenidos <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="course-banner__aside">
+            <span class="course-banner__number">17</span>
+            <span>temas para<br>tu aprendizaje</span>
+            <span class="course-banner__divider"></span>
+            <span class="course-banner__progress-label">Tu avance</span>
+            <strong id="progressSummary">0 de 17 temas estudiados</strong>
+            <div class="progress-track progress-track--light" role="progressbar" aria-label="Progreso en Fundamentos de Enfermería I" aria-valuemin="0" aria-valuemax="17" aria-valuenow="0"><span id="progressBar"></span></div>
+          </div>
+        </div>
+        <div class="section-heading section-heading--row section-heading--topics" id="temas">
+          <div><p class="eyebrow">Ruta de aprendizaje</p><h2>Explora los temas</h2></div>
+          <p class="section-heading__aside">Selecciona un módulo para consultar su objetivo, conceptos, precauciones y evidencia de aprendizaje.</p>
+        </div>
+        <div class="topic-filters" role="group" aria-label="Filtrar temas por unidad">
+          <button class="filter-chip is-active" type="button" data-topic-filter="todos" aria-pressed="true">Todos <span id="topicCount">17</span></button>
+          <button class="filter-chip" type="button" data-topic-filter="fundamentos" aria-pressed="false">Bases del cuidado</button>
+          <button class="filter-chip" type="button" data-topic-filter="valoracion" aria-pressed="false">Valoración</button>
+          <button class="filter-chip" type="button" data-topic-filter="tecnicas" aria-pressed="false">Técnicas y seguridad</button>
+          <button class="filter-chip" type="button" data-topic-filter="continuidad" aria-pressed="false">Atención y continuidad</button>
+        </div>
+        <div class="topic-grid" id="topicGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="search-section section-shell" aria-labelledby="searchTitle">
+      <div class="container search-panel">
+        <div class="search-panel__intro">
+          <p class="eyebrow">Encuentra lo que necesitas</p>
+          <h2 id="searchTitle">Busca en tu espacio de estudio</h2>
+          <p>Temas, procedimientos, conceptos clave y materiales en un solo lugar.</p>
+        </div>
+        <form class="search-box" id="searchForm" role="search">
+          <label class="visually-hidden" for="siteSearch">Buscar contenidos académicos</label>
+          <span class="search-box__icon" aria-hidden="true">⌕</span>
+          <input id="siteSearch" type="search" placeholder="Ej. signos vitales, higiene, seguridad…" autocomplete="off">
+          <button class="button button--primary" type="submit">Buscar</button>
+        </form>
+        <div class="search-results" id="searchResults" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="procedures-section section-shell section-shell--tinted" id="procedimientos" aria-labelledby="proceduresTitle">
+      <div class="container">
+        <div class="section-heading section-heading--row">
+          <div><p class="eyebrow">Del saber a la práctica</p><h2 id="proceduresTitle">Procedimientos de enfermería</h2></div>
+          <p class="section-heading__aside">Guías académicas con propósito, indicaciones, preparación, pasos de referencia y seguridad.</p>
+        </div>
+        <div class="procedure-grid" id="procedureGrid"></div>
+        <p class="section-footnote">Las guías son material educativo; realiza procedimientos únicamente con supervisión y de acuerdo con la indicación y el protocolo vigente de tu institución.</p>
+      </div>
+    </section>
+
+    <section class="materials-section section-shell" id="materiales" aria-labelledby="materialsTitle">
+      <div class="container materials-layout">
+        <div>
+          <p class="eyebrow">Organiza tu estudio</p>
+          <h2 id="materialsTitle">Material de estudio</h2>
+          <p class="materials-intro">Consulta las guías y materiales de la asignatura en un solo espacio. Los documentos se incorporarán cuando sean proporcionados y validados por el equipo docente.</p>
+          <a class="text-link" href="#recursos">Ver todos los recursos <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="material-list" id="materialList"></div>
+      </div>
+    </section>
+
+    <section class="assessment-section section-shell section-shell--dark" id="evaluaciones" aria-labelledby="assessmentTitle">
+      <div class="container assessment-layout">
+        <div class="assessment-copy">
+          <p class="eyebrow eyebrow--light">Aprender también es reflexionar</p>
+          <h2 id="assessmentTitle">Pon a prueba<br><span>lo que sabes.</span></h2>
+          <p>Realiza una autoevaluación breve sobre los fundamentos del cuidado. Recibirás retroalimentación inmediata para identificar qué repasar.</p>
+          <div class="assessment-meta"><span>Fundamentos I</span><span>·</span><span id="assessmentCount">Preguntas de práctica</span><span>·</span><span>Sin calificación oficial</span></div>
+        </div>
+        <div class="quiz-card" id="quizCard">
+          <div class="quiz-card__header"><span id="quizStep">Preparación</span><span class="quiz-pill">Autoevaluación</span></div>
+          <div class="quiz-progress" role="progressbar" aria-label="Progreso de la autoevaluación" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><span id="quizProgress"></span></div>
+          <div id="quizContent"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-section section-shell" id="recursos" aria-labelledby="resourcesTitle">
+      <div class="container">
+        <div class="section-heading section-heading--row">
+          <div><p class="eyebrow">Biblioteca académica</p><h2 id="resourcesTitle">Recursos para acompañar tu formación</h2></div>
+          <p class="section-heading__aside">Una estructura lista para organizar documentos, infografías, videos y referencias académicas.</p>
+        </div>
+        <div class="resource-filters" id="resourceFilters" role="group" aria-label="Filtrar recursos"></div>
+        <div class="resource-grid" id="resourceGrid"></div>
+      </div>
+    </section>
+
+    <section class="tool-section section-shell section-shell--tinted" id="herramientas" aria-labelledby="toolTitle">
+      <div class="container tool-layout">
+        <div class="tool-copy">
+          <p class="eyebrow">Herramienta de apoyo</p>
+          <h2 id="toolTitle">Regla de tres<br>para dilución</h2>
+          <p>La calculadora que ya estaba en el sitio sigue disponible como recurso para el estudio. Un resultado numérico no sustituye la verificación profesional.</p>
+          <div class="formula-note"><span aria-hidden="true">∑</span><span><strong>Fórmula educativa</strong><br>Dosis indicada × volumen final ÷ presentación</span></div>
+        </div>
+        <div class="calculator-card">
+          <form id="calculatorForm" novalidate>
+            <div class="calculator-field"><label for="dose">Dosis indicada</label><div class="calculator-input"><input id="dose" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 250" required><select id="doseUnit" aria-label="Unidad de la dosis"><option value="mcg">mcg</option><option value="mg" selected>mg</option><option value="g">g</option></select></div></div>
+            <div class="calculator-field"><label for="dilutionVolume">Volumen final de dilución</label><div class="calculator-input"><input id="dilutionVolume" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 5" required><span class="unit-label">mL</span></div><small>Utiliza el volumen final de la preparación.</small></div>
+            <div class="calculator-field"><label for="presentation">Presentación del medicamento</label><div class="calculator-input"><input id="presentation" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 500" required><select id="presentationUnit" aria-label="Unidad de la presentación"><option value="mcg">mcg</option><option value="mg" selected>mg</option><option value="g">g</option></select></div></div>
+            <div class="calculator-actions"><button class="button button--primary" type="submit">Calcular volumen</button><button class="button button--outline" id="clearCalculator" type="button">Limpiar</button></div>
+            <p class="calculator-message" id="calculatorMessage" role="status" aria-live="polite"></p>
+            <div class="calculator-result" id="calculatorResult" hidden aria-live="polite"><span>Volumen calculado</span><strong id="calculatorValue"></strong><p id="calculatorDetail"></p></div>
+          </form>
+          <p class="calculator-disclaimer">Verifica siempre unidades, preparación e indicación con el profesional responsable y el protocolo institucional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-shell" id="acerca" aria-labelledby="aboutTitle">
+      <div class="container about-grid">
+        <div><p class="eyebrow">Licenciatura en Enfermería</p><h2 id="aboutTitle">Un espacio educativo para aprender a cuidar con sentido.</h2></div>
+        <div class="about-copy"><p>Esta plataforma es una base educativa digital para apoyar la formación de estudiantes de Enfermería. Inicia con Fundamentos de Enfermería I y está organizada para ampliar asignaturas, temas, procedimientos, materiales y evaluaciones.</p><p>El portal no representa un sistema de gestión académica ni almacena calificaciones oficiales. El seguimiento de estudio se guarda localmente en el navegador de este dispositivo.</p><a class="text-link" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__main"><a class="brand brand--footer" href="#inicio"><img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente"><span class="brand__copy"><strong>Universidad de Oriente</strong><span>Licenciatura en Enfermería</span></span></a><p>Espacio educativo · Fundamentos de Enfermería I</p><a href="#inicio">Volver arriba ↑</a></div>
+    <div class="container site-footer__legal"><span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span><span>Formación · Ética · Cuidado</span></div>
+  </footer>
+
+  <dialog class="content-dialog" id="topicDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-topline"><span class="eyebrow" id="dialogCategory">Fundamentos de Enfermería I</span>    <button class="dialog-close" id="dialogClose" type="button" data-close-dialog aria-label="Cerrar contenido">×</button></div>
+    <div class="dialog-body">
+      <p class="dialog-index" id="dialogIndex"></p><h2 id="dialogTitle"></h2><p class="dialog-objective" id="dialogObjective"></p>
+      <div class="dialog-progress"><div class="progress-track"><span id="dialogProgressBar"></span></div><span id="dialogProgressText"></span></div>
+      <div class="dialog-content-grid" id="dialogSections"></div>
+    </div>
+    <div class="dialog-actions"><button class="button button--outline" id="previousTopic" type="button">← Anterior</button><button class="button button--primary" id="markStudied" type="button">Marcar como estudiado</button><button class="button button--outline" id="nextTopic" type="button">Siguiente →</button></div>
+  </dialog>
+  <dialog class="content-dialog content-dialog--procedure" id="procedureDialog" aria-labelledby="procedureDialogTitle">
+    <div class="dialog-topline"><span class="eyebrow">Guía académica de procedimiento</span><button class="dialog-close" type="button" data-close-dialog aria-label="Cerrar procedimiento">×</button></div>
+    <div class="dialog-body"><p class="dialog-index" id="procedureCategory"></p><h2 id="procedureDialogTitle"></h2><p class="dialog-objective" id="procedureObjective"></p><div class="dialog-content-grid" id="procedureSections"></div></div>
+  </dialog>
+  <div class="toast-region" id="toastRegion" role="status" aria-live="polite"></div>
+  <script>
+    if ('serviceWorker' in navigator && window.isSecureContext) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js').catch((error) => {
+          console.error('No se pudo habilitar el modo sin conexión:', error);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102a43">
   <meta name="description" content="Espacio educativo de la Escuela de Enfermería de la Universidad de Oriente. Recursos, fundamentos, procedimientos y evaluaciones.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
