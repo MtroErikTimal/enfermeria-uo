@@ -1,4 +1,4 @@
-const CACHE_NAME = 'uo-enfermeria-v3';
+const CACHE_NAME = 'uo-enfermeria-v4';
 const APP_FILES = [
   './',
   './index.html',
@@ -11,7 +11,9 @@ const APP_FILES = [
   './manifest.webmanifest',
   './icon.svg',
   './img/logo-uo.png',
-  './img/logo-enfermeria.png'
+  './img/logo-enfermeria.png',
+  './img/enfermera-hero.svg',
+  './img/enfermera-perfil.svg'
 ];
 
 self.addEventListener('install', (event) => {

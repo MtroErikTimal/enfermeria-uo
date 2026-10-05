@@ -2,14 +2,14 @@
   "id": "./",
   "name": "Licenciatura en Enfermería · Universidad de Oriente",
   "short_name": "Enfermería UO",
-  "description": "Espacio educativo de la Licenciatura en Enfermería de la Universidad de Oriente materia de Programación.",
+  "description": "Plataforma educativa de la Licenciatura en Enfermería de la Universidad de Oriente.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#10251f",
-  "theme_color": "#10251f",
+  "background_color": "#ffffff",
+  "theme_color": "#102a43",
   "icons": [
     {
       "src": "./icon.svg",
