@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "Escuela de Enfermería · Universidad de Oriente",
+  "short_name": "Enfermería UO",
+  "description": "Espacio educativo de la Escuela de Enfermería de la Universidad de Oriente.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#10251f",
+  "theme_color": "#10251f",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
