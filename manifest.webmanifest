@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Escuela de Enfermería · Universidad de Oriente",
+  "name": "Licenciatura en Enfermería · Universidad de Oriente",
   "short_name": "Enfermería UO",
-  "description": "Espacio educativo de la Escuela de Enfermería de la Universidad de Oriente.",
+  "description": "Espacio educativo de la Licenciatura en Enfermería de la Universidad de Oriente materia de Programación.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",
