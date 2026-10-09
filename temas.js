@@ -200,7 +200,7 @@ window.UO_TEMAS = [
     titulo: "RPBI",
     unidad: "tecnicas",
     resumen: "Separación y manejo seguro de residuos peligrosos biológico-infecciosos según normativa aplicable.",
-    conceptos: ["Identificación y segregación", "Contenedores autorizados", "Precauciones estándar", "Normativa local"],
+    conceptos: ["Sangre: El tejido hemático con todos sus elementos", "Identificación y segregación", "Contenedores autorizados", "Precauciones estándar", "Normativa local"],
     objetivo: "Explicar por qué el manejo de RPBI depende de una clasificación correcta y del cumplimiento de la regulación y el protocolo vigentes.",
     introduccion: "Los residuos con riesgo biológico deben manejarse de forma que proteja a personas y ambiente. Las definiciones, recipientes, etiquetado y disposición final dependen de la regulación aplicable y las reglas institucionales.",
     materiales: ["Contenedores autorizados y etiquetados", "Equipo de protección según riesgo", "Procedimiento institucional actualizado"],
