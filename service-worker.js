@@ -13,7 +13,7 @@ const APP_FILES = [
   './img/logo-uo.png',
   './img/logo-enfermeria.png',
   './img/enfermera-hero.jpg',
-  './img/enfermera-perfil.avif'
+  './img/enfermera-perfil.svg'
 ];
 
 self.addEventListener('install', (event) => {
