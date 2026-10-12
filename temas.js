@@ -79,18 +79,122 @@ window.UO_TEMAS = [
   },
   {
     id: "exploracion-fisica",
-    titulo: "Exploración Física",
+    [
+  {
+    id: "exploracion-fisica",
+    titulo: "Exploración Física del Paciente",
     unidad: "valoracion",
-    resumen: "Valoración sistemática que integra observación, entrevista y técnicas físicas dentro del alcance de formación.",
-    conceptos: ["Inspección", "Palpación", "Percusión y auscultación según enseñanza", "Secuencia y comparación", "Consentimiento"],
-    objetivo: "Distinguir el propósito de las técnicas de exploración física y reconocer condiciones esenciales de una valoración respetuosa y segura.",
-    introduccion: "La exploración física complementa la entrevista y la revisión de antecedentes. La secuencia y las técnicas se aprenden de forma supervisada y se adaptan a la indicación, privacidad y condición de la persona.",
-    materiales: ["Instrumentos adecuados y verificados", "Higiene de manos y elementos de protección según riesgo", "Espacio con privacidad"],
-    pasos: ["Confirma propósito, identidad y consentimiento conforme al protocolo.", "Explica cada parte y facilita privacidad, comodidad y acompañamiento apropiado.", "Prepara los instrumentos y realiza las técnicas en la secuencia enseñada.", "Compara hallazgos de manera sistemática y detente ante molestias o cambios.", "Registra hallazgos objetivos y comunica los que requieran valoración."],
-    precauciones: ["Realiza la práctica con supervisión y dentro del alcance de formación.", "Adapta la exploración a la condición y preferencias de la persona."],
-    seguridad: ["Explica y solicita consentimiento; protege exposición corporal y privacidad.", "Aplica precauciones estándar y desinfecta los instrumentos reutilizables."],
-    errores: ["Explorar sin explicar ni obtener consentimiento.", "Registrar interpretaciones como observaciones objetivas.", "Continuar pese al dolor sin reevaluar la situación."],
-    evidencia: "Elabora un esquema de una valoración docente e identifica medidas de consentimiento, privacidad y registro objetivo."
+    resumen: "Procedimiento de enfermería que permite valorar de manera sistemática el estado físico del paciente e identificar hallazgos relevantes para su atención.",
+    conceptos: [
+      "Inspección",
+      "Palpación",
+      "Percusión",
+      "Auscultación",
+      "Signos vitales",
+      "Valoración cefalocaudal",
+      "Consentimiento y privacidad"
+    ],
+    objetivo: "Reconocer y aplicar los principios básicos de la exploración física para identificar y registrar hallazgos objetivos, con respeto, seguridad y supervisión según el nivel de formación.",
+    introduccion: "La exploración física es una parte fundamental de la valoración de enfermería. Se realiza mediante la observación y las técnicas físicas de inspección, palpación, percusión y auscultación, según las necesidades del paciente. Complementa la entrevista y los antecedentes clínicos, y permite reconocer cambios en el estado de salud.",
+    materiales: [
+      "Estetoscopio",
+      "Termómetro y baumanómetro",
+      "Oxímetro de pulso, según disponibilidad",
+      "Lámpara de exploración",
+      "Guantes y equipo de protección según el riesgo",
+      "Formato de registros clínicos",
+      "Material para higiene de manos"
+    ],
+    pasos: [
+      "Verifica la identidad del paciente, explica el procedimiento y solicita su consentimiento.",
+      "Realiza higiene de manos y prepara el equipo necesario.",
+      "Garantiza privacidad, iluminación adecuada y comodidad.",
+      "Observa el estado general, la postura, la movilidad y el nivel de respuesta del paciente.",
+      "Valora los signos vitales y realiza la exploración física de forma sistemática, según la indicación y la enseñanza recibida.",
+      "Aplica inspección, palpación, percusión y auscultación cuando corresponda.",
+      "Compara los hallazgos entre regiones corporales y con los datos disponibles del paciente.",
+      "Registra los hallazgos objetivos y comunica oportunamente cualquier alteración relevante."
+    ],
+    precauciones: [
+      "Adaptar la exploración a la condición clínica y tolerancia del paciente.",
+      "Realizar técnicas invasivas o especializadas únicamente con la capacitación y autorización correspondientes.",
+      "Detener la exploración si aparece dolor intenso, dificultad respiratoria, mareo u otro cambio preocupante."
+    ],
+    seguridad: [
+      "Mantener la privacidad y cubrir las regiones corporales que no se estén explorando.",
+      "Aplicar precauciones estándar y desinfectar los instrumentos reutilizables.",
+      "Utilizar equipo adecuado y verificar su funcionamiento.",
+      "Registrar observaciones objetivas sin sustituirlas por suposiciones diagnósticas."
+    ],
+    errores: [
+      "Explorar sin explicar el procedimiento.",
+      "Omitir la higiene de manos o la privacidad.",
+      "Utilizar instrumentos sin verificar su funcionamiento.",
+      "Registrar datos no observados o no medidos.",
+      "Ignorar molestias o cambios en el estado del paciente."
+    ],
+    evidencia: "Elabora una lista de verificación de la exploración física e identifica las técnicas empleadas, los signos vitales, las medidas de seguridad y los hallazgos que deben registrarse."
+  },
+  {
+    id: "movilizacion-paciente",
+    titulo: "Movilización del Paciente",
+    unidad: "cuidados-basicos",
+    resumen: "Conjunto de técnicas para cambiar de posición, ayudar al movimiento y trasladar al paciente de forma segura, protegiendo su integridad y la del personal de enfermería.",
+    conceptos: [
+      "Mecánica corporal",
+      "Cambios de posición",
+      "Movilización activa y pasiva",
+      "Transferencia cama-silla",
+      "Alineación corporal",
+      "Prevención de caídas",
+      "Uso de ayudas técnicas"
+    ],
+    objetivo: "Identificar y aplicar principios básicos de movilización para favorecer la comodidad, la autonomía y la seguridad del paciente, disminuyendo el riesgo de lesiones.",
+    introduccion: "La movilización del paciente consiste en ayudarlo a cambiar de posición, incorporarse, sentarse, levantarse o trasladarse, de acuerdo con su capacidad física y condición clínica. Una técnica adecuada contribuye a prevenir complicaciones relacionadas con la inmovilidad, como lesiones por presión y pérdida de movilidad, y reduce el riesgo de lesiones musculoesqueléticas del personal.",
+    materiales: [
+      "Cama hospitalaria con frenos funcionales",
+      "Sábana clínica o sábana deslizante, según la técnica",
+      "Silla de ruedas o sillón, cuando corresponda",
+      "Cinturón de marcha, si está indicado y se cuenta con capacitación",
+      "Grúa u otras ayudas mecánicas, cuando sean necesarias",
+      "Calzado antideslizante",
+      "Equipo de protección según el riesgo"
+    ],
+    pasos: [
+      "Valora la movilidad, fuerza, equilibrio, dolor, nivel de conciencia y capacidad de colaboración del paciente.",
+      "Revisa las restricciones médicas, dispositivos, sondas, catéteres y riesgos de caída.",
+      "Explica la maniobra y solicita la colaboración y el consentimiento del paciente.",
+      "Determina el número de personas necesarias y selecciona las ayudas técnicas adecuadas.",
+      "Prepara el entorno, despeja el área y asegura los frenos de la cama, silla o camilla.",
+      "Ajusta la altura de la cama y utiliza una postura ergonómica, evitando giros bruscos y esfuerzos innecesarios.",
+      "Realiza el cambio de posición, la incorporación o la transferencia mediante la técnica aprendida y con apoyo suficiente.",
+      "Alinea el cuerpo, verifica la comodidad y coloca al paciente en una posición segura.",
+      "Comprueba la estabilidad, el estado general y la correcta colocación de los dispositivos.",
+      "Deja el timbre y los objetos necesarios al alcance, y registra la movilización, la tolerancia y cualquier incidencia."
+    ],
+    precauciones: [
+      "No movilizar sin valorar previamente la condición clínica y las restricciones existentes.",
+      "Solicitar ayuda adicional o utilizar equipos mecánicos cuando el peso, la dependencia o el riesgo lo requieran.",
+      "Evitar traccionar de brazos, piernas, sondas o catéteres.",
+      "Suspender la maniobra ante dolor intenso, mareo, dificultad respiratoria o inestabilidad."
+    ],
+    seguridad: [
+      "Mantener frenos activados y entorno libre de obstáculos.",
+      "Proteger vías, sondas, drenajes y otros dispositivos durante la movilización.",
+      "Aplicar medidas de prevención de caídas y lesiones por presión.",
+      "Respetar la dignidad, intimidad y capacidad de decisión del paciente.",
+      "Utilizar ayudas mecánicas y técnicas ergonómicas para reducir lesiones del personal."
+    ],
+    errores: [
+      "Movilizar sin valorar la capacidad física del paciente.",
+      "Intentar levantar solo a una persona que requiere ayuda adicional.",
+      "Realizar movimientos bruscos o tirar de las extremidades.",
+      "Olvidar bloquear los frenos o despejar el entorno.",
+      "Dejar al paciente en una posición inestable o sin medidas de seguridad."
+    ],
+    evidencia: "Realiza una demostración supervisada de un cambio de posición y una transferencia apropiada al nivel de movilidad del paciente. Identifica los riesgos, las ayudas utilizadas y las medidas de seguridad."
+  }
+]
   },
   {
     id: "mecánica-corporal",
@@ -109,18 +213,131 @@ window.UO_TEMAS = [
   },
   {
     id: "movilizacion-paciente",
-    titulo: "Movilización del paciente",
-    unidad: "tecnicas",
-    resumen: "Planificación y asistencia segura de cambios de posición y traslados individualizados.",
-    conceptos: ["Valoración de movilidad", "Transferencia y asistencia", "Ayudas técnicas", "Prevención de caídas"],
-    objetivo: "Planificar una movilización académica identificando capacidades, riesgos, apoyo requerido y comunicación con la persona.",
-    introduccion: "Movilizar incluye cambios posturales y traslados. Antes de ayudar, el equipo valora capacidades, condición, riesgos y equipo disponible; las decisiones se adaptan al plan de cuidado.",
-    materiales: ["Ayuda técnica definida por la valoración", "Frenos y superficies en condición segura", "Personal de apoyo conforme al protocolo"],
-    pasos: ["Consulta el plan de cuidado y valora la capacidad actual.", "Explica el movimiento y verifica comodidad y colaboración.", "Prepara frenos, espacio, calzado y ayuda técnica indicada.", "Coordina la maniobra con el equipo y conserva comunicación continua.", "Verifica alineación, comodidad y seguridad al finalizar; registra según protocolo."],
-    precauciones: ["No continúes ante mareo, dolor, resistencia, cambios clínicos o equipo inadecuado.", "Solicita apoyo profesional cuando la asistencia segura no pueda realizarse con los recursos disponibles."],
-    seguridad: ["Aplica prevención de caídas y lineamientos institucionales.", "Evita tracciones de extremidades, dispositivos y accesos."],
-    errores: ["Omitir la valoración previa o no coordinar el movimiento.", "Dejar frenos sin accionar o el entorno con obstáculos."],
-    evidencia: "Presenta una lista de comprobación previa a una movilización docente y justifica cuándo detener y pedir ayuda."
+    {
+
+  id: "movilizacion-paciente",
+
+  titulo: "Movilización del paciente",
+
+  unidad: "tecnicas",
+
+  resumen: "Procedimiento de enfermería para realizar cambios posturales, movilizaciones y traslados de forma individualizada, segura y de acuerdo con las capacidades y necesidades del paciente.",
+
+  conceptos: [
+
+    "Valoración de la movilidad",
+
+    "Cambios posturales",
+
+    "Mecánica corporal",
+
+    "Transferencias y traslados",
+
+    "Ayudas técnicas",
+
+    "Prevención de caídas",
+
+    "Prevención de lesiones por presión"
+
+  ],
+
+  objetivo: "Identificar y aplicar los principios básicos de movilización del paciente, valorando sus capacidades, riesgos, necesidades de apoyo y tolerancia al movimiento para mantener su seguridad y comodidad.",
+
+  introduccion: "La movilización del paciente comprende los cambios de posición en cama, la incorporación, la sedestación, la bipedestación y los traslados a una silla de ruedas o camilla. Antes de realizarla, el personal de enfermería debe valorar la condición clínica, la fuerza, el equilibrio, el dolor y el nivel de colaboración del paciente. Una técnica adecuada favorece la comodidad, conserva la movilidad y ayuda a prevenir complicaciones derivadas de la inmovilidad, como lesiones por presión y pérdida de fuerza muscular.",
+
+  materiales: [
+
+    "Cama hospitalaria con frenos funcionales",
+
+    "Sábana clínica o sábana deslizante, según la técnica",
+
+    "Silla de ruedas o camilla, cuando corresponda",
+
+    "Ayudas mecánicas para movilización, si están indicadas",
+
+    "Calzado antideslizante",
+
+    "Almohadas y soportes para mantener la alineación corporal",
+
+    "Equipo de protección personal según el riesgo"
+
+  ],
+
+  pasos: [
+
+    "Verifica la identidad del paciente y consulta el plan de cuidados y las restricciones de movilidad.",
+
+    "Valora la fuerza, el equilibrio, el nivel de conciencia, el dolor, la movilidad, el estado de la piel y la capacidad de colaboración.",
+
+    "Identifica los riesgos de caída y revisa sondas, catéteres, drenajes y otros dispositivos conectados al paciente.",
+
+    "Explica el procedimiento, solicita su consentimiento y acuerda cómo se coordinará el movimiento.",
+
+    "Prepara el espacio, retira obstáculos, verifica los frenos y selecciona la ayuda técnica adecuada.",
+
+    "Determina si necesitas apoyo de otro profesional o un dispositivo mecánico para realizar la maniobra de forma segura.",
+
+    "Realiza el cambio postural o traslado con movimientos coordinados, manteniendo la alineación corporal y evitando tirones o torsiones.",
+
+    "Observa la respuesta del paciente durante la movilización y detén la maniobra si presenta dolor importante, mareo, dificultad respiratoria o cambios clínicos.",
+
+    "Al finalizar, verifica la comodidad, la alineación corporal, la estabilidad y la seguridad de los dispositivos.",
+
+    "Deja al paciente en una posición segura, con el timbre y los objetos necesarios al alcance, y registra el procedimiento, la tolerancia y cualquier incidencia."
+
+  ],
+
+  precauciones: [
+
+    "Adapta la maniobra a la condición clínica, la capacidad funcional y las restricciones del paciente.",
+
+    "No intentes levantar manualmente a un paciente dependiente cuando se requieran más personas o ayudas mecánicas.",
+
+    "Evita traccionar de las extremidades, sondas, catéteres y drenajes.",
+
+    "Suspende la maniobra ante dolor intenso, mareo, dificultad respiratoria, pérdida del equilibrio o deterioro clínico.",
+
+    "Solicita apoyo profesional si no cuentas con los recursos necesarios para movilizar al paciente de forma segura."
+
+  ],
+
+  seguridad: [
+
+    "Aplica las medidas institucionales de prevención de caídas.",
+
+    "Activa los frenos de la cama, silla de ruedas o camilla antes de realizar la transferencia, según corresponda.",
+
+    "Utiliza mecánica corporal adecuada y ayudas técnicas para reducir el riesgo de lesiones del personal.",
+
+    "Protege la intimidad y la dignidad del paciente durante todo el procedimiento.",
+
+    "Revisa la piel y utiliza cambios posturales individualizados según el riesgo y el plan de cuidados.",
+
+    "Mantén libres de obstáculos las vías de desplazamiento y protege los dispositivos médicos."
+
+  ],
+
+  errores: [
+
+    "Movilizar sin valorar previamente las capacidades y los riesgos del paciente.",
+
+    "Omitir la explicación del procedimiento o la coordinación con el equipo.",
+
+    "Realizar movimientos bruscos o tirar de las extremidades.",
+
+    "Olvidar los frenos o dejar obstáculos en el área.",
+
+    "Ignorar el dolor, el mareo o los cambios clínicos durante la maniobra.",
+
+    "Dejar al paciente en una posición inestable o sin las medidas de seguridad indicadas.",
+
+    "No registrar la respuesta del paciente ni las incidencias relevantes."
+
+  ],
+
+  evidencia: "Elabora una lista de comprobación previa a la movilización y realiza una demostración supervisada de un cambio postural o transferencia. Identifica la valoración previa, los recursos necesarios, las medidas de seguridad y los criterios para detener la maniobra."
+
+  }
   },
   {
     id: "posiciones-paciente",
