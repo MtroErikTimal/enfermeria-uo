@@ -93,19 +93,19 @@ window.UO_TEMAS = [
     evidencia: "Elabora un esquema de una valoración docente e identifica medidas de consentimiento, privacidad y registro objetivo."
   },
   {
-    id: "mecanica-corporal",
-    titulo: "Mecánica Corporal",
-    unidad: "tecnicas",
-    resumen: "Principios de postura, equilibrio y movimiento para proteger a la persona y al equipo de salud.",
-    conceptos: ["Base de sustentación", "Alineación corporal", "Centro de gravedad", "Planificación y ayudas técnicas"],
-    objetivo: "Relacionar los principios de mecánica corporal con la prevención de lesiones durante actividades de cuidado.",
-    introduccion: "La mecánica corporal utiliza principios de alineación y equilibrio para reducir el esfuerzo. La valoración del riesgo y los equipos de asistencia tienen prioridad sobre levantar manualmente una carga.",
-    materiales: ["Ayudas técnicas prescritas o autorizadas", "Calzado seguro y espacio despejado", "Apoyo de personal capacitado cuando se requiera"],
-    pasos: ["Valora la tarea, el entorno y las capacidades de la persona.", "Solicita apoyo y utiliza la ayuda técnica apropiada.", "Organiza el espacio, despeja obstáculos y explica el movimiento.", "Mantén una base estable y evita giros bruscos o sobreesfuerzos.", "Detente y reevalúa si hay dolor, inseguridad o cambio inesperado."],
-    precauciones: ["No levantes ni movilices a una persona sin evaluar riesgos y recibir entrenamiento.", "Sigue la evaluación de movilidad y el plan de asistencia individual."],
-    seguridad: ["Usa dispositivos y número de asistentes definidos en el protocolo.", "Protege vías, líneas, privacidad y comunicación durante el movimiento."],
-    errores: ["Intentar compensar una postura insegura levantando a pulso.", "Ignorar la capacidad variable de la persona o el entorno."],
-    evidencia: "Analiza un caso de transferencia académica y propone cómo preparar espacio, equipo y apoyo antes de movilizar."
+    id: "mecánica-corporal",
+    titulo:  "Mecánica Corporal",
+    unidad:  "técnicas",
+    resumen:  "Principios de postura, equilibrio y movimiento para proteger a la persona y al equipo de salud.",
+    conceptos: "Base de sustentación", "Alineación corporal", "Centro de gravedad", "Planificación y ayudas técnicas",
+    objetivo:  "Relacionar los principios de mecánica corporal con la prevención de lesiones durante actividades de cuidado.",
+    introduccion:"La mecánica corporal utiliza principios de alineación y equilibrio para reducir el esfuerzo. La valoración del riesgo y los equipos de asistencia tienen prioridad sobre levantar manualmente una carga.",
+    materiales: "Ayudas técnicas prescritas o autorizadas", "Calzado seguro y espacio despejado", "Apoyo de personal capacitado cuando se requiera",
+    pasos:  "Valora la tarea, el entorno y las capacidades de la persona.", "Solicita apoyo y utiliza la ayuda técnica apropiada.", "Organiza el espacio, despeja obstáculos y explica el movimiento.", "Mantén una base estable y evita giros bruscos o sobreesfuerzos.", "Detente y reevalúa si hay dolor, inseguridad o cambio inesperado.",
+    precauciones:  "No levantes ni movilices a una persona sin evaluar riesgos y recibir entrenamiento.", "Sigue la evaluación de movilidad y el plan de asistencia individual.",
+    seguridad: "Usa dispositivos y número de asistentes definidos en el protocolo.", "Protege vías, líneas, privacidad y comunicación durante el movimiento.",
+    errores: "Intentar compensar una postura insegura levantando a pulso.", "Ignorar la capacidad variable de la persona o el entorno."
+    evidencia:  "Analiza un caso de transferencia académica y propone cómo preparar espacio, equipo y apoyo antes de movilizar."
   },
   {
     id: "movilizacion-paciente",
@@ -243,20 +243,21 @@ window.UO_TEMAS = [
     evidencia: "Compara la etiqueta de un producto autorizado con un protocolo local y resume sus indicaciones de seguridad."
   },
   {
-    id: "seguridad-paciente",
+    id:  "seguridad-paciente",
     titulo: "Principios básicos de seguridad del paciente",
-    unidad: "fundamentos",
-    resumen: "Prácticas para prevenir daño, reconocer riesgos y fomentar comunicación y aprendizaje del sistema.",
-    conceptos: ["Identificación", "Comunicación efectiva", "Prevención de infecciones y caídas", "Cultura de seguridad", "Notificación"],
+    unidad:  "fundamentos",
+    resumen:"Prácticas para prevenir daño, reconocer riesgos y fomentar comunicación y aprendizaje del sistema.",
+    conceptos: "Identificación", "Comunicación efectiva", "Prevención de infecciones y caídas", "Cultura de seguridad", "Notificación",
     objetivo: "Identificar prácticas generales de seguridad del paciente y explicar cuándo detenerse, verificar o escalar una preocupación.",
     introduccion: "La seguridad del paciente es responsabilidad compartida y requiere sistemas de trabajo confiables, comunicación abierta y aprendizaje de incidentes. Los protocolos locales detallan prácticas específicas.",
-    materiales: ["Políticas institucionales de seguridad", "Lista de verificación aplicable", "Canal de comunicación y reporte local"],
-    pasos: ["Identifica riesgos del entorno y de la tarea antes de intervenir.", "Verifica identidad y propósito usando el proceso vigente.", "Comunica información relevante de forma clara y confirma los mensajes críticos.", "Aplica precauciones de prevención pertinentes al riesgo.", "Notifica errores, incidentes o condiciones inseguras según la política."],
-    precauciones: ["Consulta a una persona supervisora ante dudas, discrepancias o falta de competencia.", "Aplica protocolos actuales y evita basarte solo en memoria o supuestos."],
-    seguridad: ["Fomenta comunicación respetuosa, participación de la persona y notificación sin demora.", "Ante una situación insegura, pausa y solicita apoyo por los canales establecidos."],
-    errores: ["Normalizar omisiones o no comunicar un cambio relevante.", "Culpar a una persona sin examinar factores del sistema.", "Omitir verificación por prisa o familiaridad."],
-    evidencia: "Analiza una situación hipotética de riesgo e identifica factores, acción inmediata, comunicación y aprendizaje preventivo."
-  }
+    materiales: "Políticas institucionales de seguridad", "Lista de verificación aplicable", "Canal de comunicación y reporte local",
+    pasos:"Identifica riesgos del entorno y de la tarea antes de intervenir.", "Verifica identidad y propósito usando el proceso vigente.", "Comunica información relevante de forma clara y confirma los mensajes críticos.", "Aplica precauciones de prevención pertinentes al riesgo.", "Notifica errores, incidentes o condiciones inseguras según la política.",
+    precauciones:"Consulta a una persona supervisora ante dudas, discrepancias o falta de competencia.", "Aplica protocolos actuales y evita basarte solo en memoria o supuestos.",
+    seguridad"Fomenta comunicación respetuosa, participación de la persona y notificación sin demora.", "Ante una situación insegura, pausa y solicita apoyo por los canales establecidos.",
+    errores:  "Normalizar omisiones o no comunicar un cambio relevante.", "Culpar a una persona sin examinar factores del sistema.", "Omitir verificación por prisa o familiaridad.",
+    evidencia:"Analiza una situación hipotética de riesgo e identifica factores, acción inmediata, comunicación y aprendizaje preventivo."
+  
+]
 ];
 
 window.UO_ASIGNATURAS = [
