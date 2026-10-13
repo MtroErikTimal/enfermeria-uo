@@ -640,30 +640,29 @@ document.getElementById("recomendacion").textContent = r.nota;
 const interpretacion = r.texto.toLowerCase();
 let nivel = "medio";
 
-if (
+if (actual === datos.glasgow) {
+  // Glasgow: clasificación según puntuación total
+  if (r.total <= 8) {
+    nivel = "alto";
+  } else if (r.total <= 12) {
+    nivel = "medio";
+  } else {
+    nivel = "bajo";
+  }
+} else if (
   interpretacion.includes("riesgo bajo") ||
   interpretacion.includes("sin riesgo") ||
-  interpretacion.includes("riesgo leve") ||
-  interpretacion.includes("dolor leve") ||
-  interpretacion.includes("alteración leve")
+  interpretacion.includes("dolor leve")
 ) {
   nivel = "bajo";
 } else if (
   interpretacion.includes("riesgo alto") ||
   interpretacion.includes("riesgo elevado") ||
   interpretacion.includes("riesgo muy alto") ||
-  interpretacion.includes("riesgo severo") ||
-  interpretacion.includes("dolor intenso") ||
-  interpretacion.includes("alteración grave")
+  interpretacion.includes("dolor intenso")
 ) {
   nivel = "alto";
 }
-
-resultado.classList.remove(
-  "riesgo-bajo",
-  "riesgo-medio",
-  "riesgo-alto"
-);
 
 resultado.classList.add("riesgo-" + nivel);
 
