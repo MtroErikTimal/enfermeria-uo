@@ -310,45 +310,8 @@
               "Una alteración aguda requiere valoración clínica inmediata."
           };
         }
-       calcular(v) {
-  const total = v.reduce((a, b) => a + b, 0);
-  let texto;
-  let recomendacion;
-  if (total >= 13) {
-    texto = "CLASIFICACIÓN: ALTERACIÓN LEVE DEL NIVEL DE CONCIENCIA. " +
-      "Puntuación de 13 a 15 puntos.";
-    recomendacion =
-      "Continuar la valoración neurológica y vigilar cambios en el " +
-      "estado de conciencia. Una puntuación de 13 a 15 no descarta " +
-      "una lesión grave.";
-  } else if (total >= 9) {
-    texto = "CLASIFICACIÓN: ALTERACIÓN MODERADA DEL NIVEL DE CONCIENCIA. " +
-      "Puntuación de 9 a 12 puntos.";
-    recomendacion =
-      "Requiere valoración clínica inmediata, vigilancia neurológica " +
-      "estrecha y evaluación de la capacidad para proteger la vía aérea.";
-  } else {
-    texto = "CLASIFICACIÓN: ALTERACIÓN GRAVE DEL NIVEL DE CONCIENCIA. " +
-      "Puntuación de 3 a 8 puntos.";
-    recomendacion =
-      "Situación de alto riesgo que requiere atención clínica inmediata. " +
-      "Evaluar de inmediato la vía aérea, la respiración y la circulación, " +
-      "así como la necesidad de soporte avanzado según la valoración clínica.";
-  }
-  return {
-    total,
-    texto,
-    nota: recomendacion +
-      " Registrar por separado las respuestas ocular, verbal y motora. " +
-      "Considerar factores que puedan interferir con la evaluación, " +
-      "como sedación, intubación o barreras de comunicación. " +
-      "La puntuación aislada no determina por sí sola la gravedad global " +
-      "del paciente."
-  };
-}
       },
-
-      braden: {
+            braden: {
         titulo: "Escala de Braden",
         descripcion:
           "Versión para adultos: seis dimensiones de riesgo.",
