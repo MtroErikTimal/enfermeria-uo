@@ -2116,28 +2116,19 @@ select:focus-visible {
 }
 
 @media (max-width: 1000px) {
-.primary-nav__inner {
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 0 23px;
-  overflow: visible;
-}
-
-.primary-nav__inner::-webkit-scrollbar {
-  display: none;
-}
-  }
-
-  .primary-nav__inner::-webkit-scrollbar {
-    display: none;
+  .primary-nav__inner {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0 23px;
+    overflow: visible;
   }
 
   .quick-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .resource-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero__grid {
@@ -2156,7 +2147,6 @@ select:focus-visible {
     width: min(190px, 64%);
   }
 }
-
 @media (max-width: 760px) {
   :root {
     scroll-padding-top: 74px;
@@ -2643,5 +2633,560 @@ select:focus-visible {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+  }
+}
+/* ==========================================
+   OPTIMIZACIÓN RESPONSIVA PARA CELULARES
+   Plataforma de Enfermería - UO
+   ========================================== */
+
+@media (max-width: 760px) {
+
+  /* Evitar desbordamientos horizontales */
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  /* Menú desplegable */
+  .menu-toggle {
+    display: flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .primary-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .primary-nav.is-open {
+    display: block;
+  }
+
+  .primary-nav__inner {
+    width: 100%;
+    min-height: 0;
+    max-height: 68dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 8px 16px 14px;
+  }
+
+  .primary-nav a {
+    min-width: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  /* Encabezado institucional */
+  .masthead {
+    gap: 10px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .brand__logos {
+    flex: 0 0 auto;
+  }
+
+  .brand__copy {
+    min-width: 0;
+  }
+
+  .brand__copy strong,
+  .brand__copy > span {
+    overflow-wrap: anywhere;
+  }
+
+  .header-actions {
+    flex: 0 0 auto;
+  }
+
+  /* Bienvenida */
+  .hero {
+    padding-block: 36px 16px;
+  }
+
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .hero__copy {
+    min-width: 0;
+    padding: 0;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(32px, 8vw, 45px);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__intro {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__actions {
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero__actions .button {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-width: 0;
+    min-height: 260px;
+    aspect-ratio: 4 / 3;
+    padding: 12px;
+  }
+
+  .hero-visual__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .hero-visual__label {
+    max-width: 100%;
+    font-size: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-visual__caption {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 10px 12px;
+  }
+
+  .hero-visual__caption strong {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__footer {
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Bienvenida y presentación */
+  .welcome-grid,
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .welcome-grid > *,
+  .about-grid > * {
+    min-width: 0;
+  }
+
+  .welcome-copy,
+  .about-copy {
+    font-size: 14px;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+
+  /* Tarjetas de acceso rápido */
+  .quick-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .quick-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 17px;
+  }
+
+  .quick-card > strong {
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .quick-card__meta,
+  .quick-card__foot {
+    font-size: 11px;
+  }
+
+  /* Catálogo de asignaturas */
+  .course-catalog {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .catalog-card {
+    min-width: 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .catalog-card__copy {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .catalog-card__status {
+    margin-left: 46px;
+    white-space: normal;
+  }
+
+  /* Tarjetas de temas: una por fila */
+  .topic-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .topic-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 17px;
+  }
+
+  .topic-card__top {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .topic-card h3 {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .topic-card__description {
+    font-size: 12px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .topic-card__open {
+    min-height: 40px;
+    font-size: 12px;
+  }
+
+  /* Filtros de temas */
+  .topic-filters,
+  .resource-filters {
+    gap: 7px;
+  }
+
+  .filter-chip {
+    max-width: 100%;
+    min-height: 38px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  /* Procedimientos */
+  .procedure-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .procedure-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .procedure-card h3 {
+    font-size: 15px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .procedure-card p {
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  /* Buscador */
+  .search-panel {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+    padding: 20px 16px;
+  }
+
+  .search-box {
+    min-width: 0;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .search-box input {
+    min-width: 0;
+    font-size: 14px;
+  }
+
+  .search-box .button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .search-results {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  .search-result {
+    min-width: 0;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
+
+  /* Material de estudio */
+  .materials-layout,
+  .assessment-layout,
+  .tool-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .material-row {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .material-row__status,
+  .material-row > a {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .material-row__body {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* Evaluaciones y calculadora */
+  .quiz-card,
+  .calculator-card {
+    width: 100%;
+    min-width: 0;
+    padding: 18px 15px;
+  }
+
+  .quiz-question {
+    font-size: 17px;
+    overflow-wrap: anywhere;
+  }
+
+  .quiz-option {
+    min-width: 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .quiz-actions,
+  .calculator-actions {
+    flex-wrap: wrap;
+  }
+
+  .quiz-actions .button,
+  .calculator-actions .button {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .calculator-input {
+    grid-template-columns: minmax(0, 1fr) 75px;
+  }
+
+  /* Recursos */
+  .resource-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .resource-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 17px;
+  }
+
+  .resource-card h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .resource-card p {
+    font-size: 12px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  /* Banner del curso */
+  .course-banner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .course-banner__copy {
+    min-width: 0;
+    padding: 24px 18px;
+  }
+
+  .course-banner__copy h2 {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .course-banner__aside {
+    min-width: 0;
+    padding: 17px 18px;
+  }
+
+  /* Perfil y fotografía */
+  .about-profile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .about-portrait {
+    width: min(220px, 100%);
+  }
+
+  /* Ventanas emergentes */
+  .content-dialog,
+  .content-dialog--procedure {
+    width: calc(100% - 20px);
+    max-width: none;
+    max-height: 90dvh;
+    border-radius: 12px;
+  }
+
+  .dialog-body {
+    padding: 20px 15px;
+    overflow-wrap: anywhere;
+  }
+
+  .dialog-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dialog-section,
+  .dialog-section--wide {
+    min-width: 0;
+    grid-column: auto;
+  }
+
+  .dialog-section p,
+  .dialog-section li {
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .dialog-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .dialog-actions .button {
+    flex: 1 1 120px;
+  }
+
+  /* Pie de página */
+  .site-footer__main,
+  .site-footer__legal {
+    min-width: 0;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Ajustes para teléfonos estrechos */
+@media (max-width: 430px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .brand__copy strong {
+    font-size: 11px;
+  }
+
+  .brand__copy > span {
+    font-size: 9px;
+  }
+
+  .hero h1 {
+    font-size: clamp(31px, 8.5vw, 38px);
+  }
+
+  .hero-visual {
+    min-height: 220px;
+  }
+
+  .section-heading h2,
+  .welcome-grid h2,
+  .about-grid h2 {
+    font-size: clamp(25px, 7vw, 31px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .course-banner__number {
+    font-size: 34px;
+  }
+
+  .dialog-topline {
+    gap: 10px;
+    padding-inline: 13px;
+  }
+
+  .dialog-actions .button {
+    flex-basis: 100%;
   }
 }
