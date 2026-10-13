@@ -163,6 +163,190 @@
         box-shadow: none;
       }
     }
+    /* =========================================
+   DISEÑO INSTITUCIONAL · ENFERMERÍA UO
+   ========================================= */
+
+:root {
+  --azul: #102A43;
+  --azul2: #243F5A;
+  --azul-cielo: #38BDF8;
+
+  --verde: #16A34A;
+  --naranja: #F59E0B;
+  --rojo: #DC2626;
+
+  --fondo: #F2F6FA;
+  --borde: #D8E2EC;
+  --texto: #243746;
+}
+
+/* Encabezado institucional */
+header {
+  background: linear-gradient(135deg, #102A43, #243F5A);
+  border-bottom: 4px solid var(--azul-cielo);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: var(--azul);
+}
+
+header h1 {
+  color: white;
+}
+
+/* Catálogo de escalas */
+.tarjeta {
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--azul-cielo);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(16, 42, 67, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(16, 42, 67, 0.12);
+}
+
+/* Botones principales */
+button:not(.secundario),
+.boton {
+  background: var(--azul);
+  color: white;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+button:not(.secundario):hover,
+.boton:hover {
+  background: var(--azul2);
+}
+
+/* Botones secundarios */
+.secundario {
+  background: #E0F2FE;
+  color: var(--azul);
+  border: 1px solid #7DD3FC;
+}
+
+.secundario:hover {
+  background: #BAE6FD;
+}
+
+/* Campos de respuesta */
+select,
+input {
+  border: 1px solid #B9C8D6;
+  border-radius: 8px;
+}
+
+select:focus,
+input:focus {
+  outline: 2px solid var(--azul-cielo);
+  outline-offset: 2px;
+}
+
+/* Panel de valoración */
+.panel {
+  border-top: 4px solid var(--azul-cielo);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(16, 42, 67, 0.06);
+}
+
+/* Resultado general */
+.resultado {
+  margin-top: 22px;
+  padding: 20px;
+  border: 1px solid var(--borde);
+  border-left: 6px solid var(--azul);
+  border-radius: 10px;
+  background: white;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.puntuacion {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 800;
+  color: var(--azul);
+}
+
+/* RIESGO BAJO: VERDE */
+.resultado.riesgo-bajo {
+  background: #F0FDF4;
+  border-color: #86EFAC;
+  border-left-color: var(--verde);
+}
+
+.resultado.riesgo-bajo .puntuacion,
+.resultado.riesgo-bajo h3 {
+  color: #15803D;
+}
+
+/* RIESGO MEDIO: NARANJA */
+.resultado.riesgo-medio {
+  background: #FFFBEB;
+  border-color: #FCD34D;
+  border-left-color: var(--naranja);
+}
+
+.resultado.riesgo-medio .puntuacion,
+.resultado.riesgo-medio h3 {
+  color: #B45309;
+}
+
+/* RIESGO ALTO: ROJO */
+.resultado.riesgo-alto {
+  background: #FEF2F2;
+  border-color: #FCA5A5;
+  border-left-color: var(--rojo);
+}
+
+.resultado.riesgo-alto .puntuacion,
+.resultado.riesgo-alto h3 {
+  color: #B91C1C;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+  .contenedor {
+    width: 94%;
+    margin: 18px auto;
+  }
+
+  header {
+    padding: 20px 4%;
+  }
+
+  header h1 {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  .catalogo {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tarjeta,
+  .panel {
+    padding: 17px;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+
+  .acciones button {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .resultado {
+    padding: 16px;
+  }
+}
   </style>
 </head>
 
@@ -323,7 +507,18 @@
       "así como la necesidad de soporte avanzado según la valoración clínica.";
   }
 
-  return {
+return {
+  total,
+  nivel: total >= 13 ? "bajo" :
+         total >= 9 ? "medio" : "alto",
+  texto,
+  nota: recomendacion +
+    " Registrar por separado las respuestas ocular, verbal y motora. " +
+    "Considerar factores que puedan interferir con la evaluación, " +
+    "como sedación, intubación o barreras de comunicación. " +
+    "La puntuación aislada no determina por sí sola la gravedad global " +
+    "del paciente."
+};
     total,
     texto,
     nota: recomendacion +
@@ -418,11 +613,13 @@
           }
 
           return {
-            total,
-            texto,
-            nota: "Verificar los puntos de corte con el protocolo " +
-              "institucional. No utilizar estos rangos como diagnóstico " +
-              "ni como sustituto de la valoración de la piel."
+      total,
+  nivel: total <= 12 ? "alto" :
+         total <= 14 ? "medio" : "bajo",
+  texto,
+  nota: "Verificar los puntos de corte con el protocolo " +
+    "institucional. No utilizar estos rangos como diagnóstico " +
+    "ni como sustituto de la valoración de la piel."
           };
         }
       },
@@ -486,6 +683,8 @@
           }
 
           return {
+            nivel: total < 25 ? "bajo" :
+       total < 45 ? "medio" : "alto",
             total,
             texto,
             nota: "Los puntos de corte pueden variar por protocolo. " +
@@ -525,6 +724,8 @@
           }
 
           return {
+            nivel: total <= 3 ? "bajo" :
+       total <= 6 ? "medio" : "alto",
             total,
             texto,
             nota: "Este instrumento es una escala numérica, no una EVA " +
@@ -611,11 +812,190 @@
 
       document.getElementById("interpretacion").textContent = r.texto;
       document.getElementById("recomendacion").textContent = r.nota;
+/* =========================================
+   DISEÑO INSTITUCIONAL · ENFERMERÍA UO
+   ========================================= */
 
-      resultado.hidden = false;
-      resultado.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    });
+:root {
+  --azul: #102A43;
+  --azul2: #243F5A;
+  --azul-cielo: #38BDF8;
 
+  --verde: #16A34A;
+  --naranja: #F59E0B;
+  --rojo: #DC2626;
+
+  --fondo: #F2F6FA;
+  --borde: #D8E2EC;
+  --texto: #243746;
+}
+
+/* Encabezado institucional */
+header {
+  background: linear-gradient(135deg, #102A43, #243F5A);
+  border-bottom: 4px solid var(--azul-cielo);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: var(--azul);
+}
+
+header h1 {
+  color: white;
+}
+
+/* Catálogo de escalas */
+.tarjeta {
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--azul-cielo);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(16, 42, 67, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(16, 42, 67, 0.12);
+}
+
+/* Botones principales */
+button:not(.secundario),
+.boton {
+  background: var(--azul);
+  color: white;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+button:not(.secundario):hover,
+.boton:hover {
+  background: var(--azul2);
+}
+
+/* Botones secundarios */
+.secundario {
+  background: #E0F2FE;
+  color: var(--azul);
+  border: 1px solid #7DD3FC;
+}
+
+.secundario:hover {
+  background: #BAE6FD;
+}
+
+/* Campos de respuesta */
+select,
+input {
+  border: 1px solid #B9C8D6;
+  border-radius: 8px;
+}
+
+select:focus,
+input:focus {
+  outline: 2px solid var(--azul-cielo);
+  outline-offset: 2px;
+}
+
+/* Panel de valoración */
+.panel {
+  border-top: 4px solid var(--azul-cielo);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(16, 42, 67, 0.06);
+}
+
+/* Resultado general */
+.resultado {
+  margin-top: 22px;
+  padding: 20px;
+  border: 1px solid var(--borde);
+  border-left: 6px solid var(--azul);
+  border-radius: 10px;
+  background: white;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.puntuacion {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 800;
+  color: var(--azul);
+}
+
+/* RIESGO BAJO: VERDE */
+.resultado.riesgo-bajo {
+  background: #F0FDF4;
+  border-color: #86EFAC;
+  border-left-color: var(--verde);
+}
+
+.resultado.riesgo-bajo .puntuacion,
+.resultado.riesgo-bajo h3 {
+  color: #15803D;
+}
+
+/* RIESGO MEDIO: NARANJA */
+.resultado.riesgo-medio {
+  background: #FFFBEB;
+  border-color: #FCD34D;
+  border-left-color: var(--naranja);
+}
+
+.resultado.riesgo-medio .puntuacion,
+.resultado.riesgo-medio h3 {
+  color: #B45309;
+}
+
+/* RIESGO ALTO: ROJO */
+.resultado.riesgo-alto {
+  background: #FEF2F2;
+  border-color: #FCA5A5;
+  border-left-color: var(--rojo);
+}
+
+.resultado.riesgo-alto .puntuacion,
+.resultado.riesgo-alto h3 {
+  color: #B91C1C;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+  .contenedor {
+    width: 94%;
+    margin: 18px auto;
+  }
+
+  header {
+    padding: 20px 4%;
+  }
+
+  header h1 {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+
+  .catalogo {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tarjeta,
+  .panel {
+    padding: 17px;
+  }
+
+  .acciones {
+    flex-direction: column;
+  }
+
+  .acciones button {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .resultado {
+    padding: 16px;
+  }
+}
     document.getElementById("limpiar").addEventListener("click", () => {
       formulario.reset();
       document.getElementById("caso").value = "";
