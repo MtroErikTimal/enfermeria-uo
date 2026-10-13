@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+
+  <title>Escalas de valoración | Enfermería UO</title>
+
+  <style>
+    :root {
+      --azul: #102a43;
+      --azul2: #243f5a;
+      --verde: #16866a;
+      --fondo: #f2f6fa;
+      --borde: #d8e2ec;
+      --texto: #243746;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--azul);
+      color: white;
+      padding: 22px 5%;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contenedor {
+      width: min(1050px, 92%);
+      margin: 28px auto;
+    }
+
+    h1, h2, h3 { color: var(--azul); }
+
+    header h1 { color: white; }
+
+    .aviso {
+      padding: 16px;
+      background: #fff5d8;
+      border-left: 5px solid #d9a000;
+      border-radius: 6px;
+      margin-bottom: 24px;
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .tarjeta, .panel {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .tarjeta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .tarjeta p { flex: 1; }
+
+    button, .boton {
+      display: inline-block;
+      padding: 11px 16px;
+      border: 0;
+      border-radius: 7px;
+      background: var(--verde);
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    button:hover, .boton:hover { filter: brightness(.93); }
+
+    .secundario {
+      background: #e7eef5;
+      color: var(--azul);
+    }
+
+    .panel { margin-top: 24px; }
+
+    .campo { margin: 18px 0; }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #b9c8d6;
+      border-radius: 7px;
+      background: white;
+      font-size: 16px;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .resultado {
+      margin-top: 22px;
+      padding: 18px;
+      background: #eaf7f1;
+      border-left: 5px solid var(--verde);
+      border-radius: 8px;
+    }
+
+    .puntuacion {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--verde);
+    }
+
+    .nota {
+      font-size: 13px;
+      color: #536575;
+    }
+
+    [hidden] { display: none !important; }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #536575;
+    }
+
+    @media print {
+      header, .catalogo, .aviso, .acciones, footer {
+        display: none !important;
+      }
+
+      body { background: white; }
+
+      .contenedor { width: 100%; }
+
+      .panel, .resultado {
+        border: 1px solid #999;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="./index.html">← Volver a la plataforma</a>
+    <h1>Escalas de Valoración de Enfermería</h1>
+    <p>Universidad de Oriente · Recurso educativo</p>
+  </header>
+
+  <main class="contenedor">
+
+    <div class="aviso">
+      <strong>Importante:</strong> herramienta para aprendizaje y casos
+      simulados. No sustituye la valoración clínica ni los protocolos
+      institucionales. Las interpretaciones son orientativas y deben
+      verificarse con la versión validada de cada instrumento.
+      No introduzcas datos identificables de pacientes reales.
+    </div>
+
+    <section class="catalogo" aria-label="Catálogo de escalas">
+
+      <article class="tarjeta">
+        <h2>Glasgow</h2>
+        <p>Valoración de las respuestas ocular, verbal y motora.</p>
+        <button type="button" data-escala="glasgow">Abrir escala</button>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Braden</h2>
+        <p>Valoración del riesgo de lesiones por presión en adultos.</p>
+        <button type="button" data-escala="braden">Abrir escala</button>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Morse</h2>
+        <p>Identificación de factores de riesgo de caídas.</p>
+        <button type="button" data-escala="morse">Abrir escala</button>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Dolor numérico</h2>
+        <p>Registro de intensidad del dolor de 0 a 10.</p>
+        <button type="button" data-escala="dolor">Abrir escala</button>
+      </article>
+
+    </section>
+
+    <section id="panel" class="panel" hidden>
+      <h2 id="titulo"></h2>
+      <p id="descripcion"></p>
+
+      <div class="campo">
+        <label for="caso">Identificador del caso simulado</label>
+        <input id="caso" type="text" maxlength="50"
+          placeholder="Ej. Caso académico 01">
+      </div>
+
+      <form id="formulario">
+        <div id="preguntas"></div>
+
+        <div class="acciones">
+          <button type="submit">Calcular puntuación</button>
+          <button type="button" id="limpiar" class="secundario">
+            Limpiar
+          </button>
+          <button type="button" id="imprimir" class="secundario">
+            Imprimir resultado
+          </button>
+        </div>
+      </form>
+
+      <div id="resultado" class="resultado" hidden aria-live="polite">
+        <h3>Resultado educativo</h3>
+        <p id="casoResultado"></p>
+        <p id="puntuacion" class="puntuacion"></p>
+        <p id="interpretacion"></p>
+        <p id="recomendacion" class="nota"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Espacio educativo · Diseño y desarrollo: Mtro. Erik Rivera Timal
+  </footer>
+
+  <script>
+    "use strict";
+
+    const datos = {
+      glasgow: {
+        titulo: "Escala de Coma de Glasgow",
+        descripcion: "Selecciona la respuesta observada en cada componente.",
+        preguntas: [
+          {
+            id: "ocular",
+            texto: "Respuesta ocular",
+            opciones: [
+              ["Espontánea", 4],
+              ["A la voz", 3],
+              ["A la presión", 2],
+              ["Ninguna", 1]
+            ]
+          },
+          {
+            id: "verbal",
+            texto: "Respuesta verbal",
+            opciones: [
+              ["Orientada", 5],
+              ["Confusa", 4],
+              ["Palabras", 3],
+              ["Sonidos", 2],
+              ["Ninguna", 1]
+            ]
+          },
+          {
+            id: "motora",
+            texto: "Respuesta motora",
+            opciones: [
+              ["Obedece órdenes", 6],
+              ["Localiza la presión", 5],
+              ["Flexión normal", 4],
+              ["Flexión anormal", 3],
+              ["Extensión anormal", 2],
+              ["Ninguna", 1]
+            ]
+          }
+        ],
+        calcular(v) {
+          const total = v.reduce((a, b) => a + b, 0);
+
+          let texto;
+          if (total >= 13) {
+            texto = "Puntuación de 13 a 15.";
+          } else if (total >= 9) {
+            texto = "Puntuación de 9 a 12.";
+          } else {
+            texto = "Puntuación de 3 a 8.";
+          }
+
+          return {
+            total,
+            texto,
+            nota: "Registrar también cada componente por separado. " +
+              "Considerar factores que impidan evaluar las respuestas. " +
+              "Una alteración aguda requiere valoración clínica inmediata."
+          };
+        }
+      },
+
+      braden: {
+        titulo: "Escala de Braden",
+        descripcion:
+          "Versión para adultos: seis dimensiones de riesgo.",
+        preguntas: [
+          {
+            id: "percepcion",
+            texto: "Percepción sensorial",
+            opciones: [
+              ["Completamente limitada", 1],
+              ["Muy limitada", 2],
+              ["Ligeramente limitada", 3],
+              ["Sin limitaciones", 4]
+            ]
+          },
+          {
+            id: "humedad",
+            texto: "Exposición a la humedad",
+            opciones: [
+              ["Constantemente húmeda", 1],
+              ["Muy húmeda", 2],
+              ["Ocasionalmente húmeda", 3],
+              ["Raramente húmeda", 4]
+            ]
+          },
+          {
+            id: "actividad",
+            texto: "Actividad",
+            opciones: [
+              ["Encamado", 1],
+              ["En silla", 2],
+              ["Camina ocasionalmente", 3],
+              ["Camina frecuentemente", 4]
+            ]
+          },
+          {
+            id: "movilidad",
+            texto: "Movilidad",
+            opciones: [
+              ["Completamente inmóvil", 1],
+              ["Muy limitada", 2],
+              ["Ligeramente limitada", 3],
+              ["Sin limitaciones", 4]
+            ]
+          },
+          {
+            id: "nutricion",
+            texto: "Nutrición",
+            opciones: [
+              ["Muy deficiente", 1],
+              ["Probablemente inadecuada", 2],
+              ["Adecuada", 3],
+              ["Excelente", 4]
+            ]
+          },
+          {
+            id: "friccion",
+            texto: "Fricción y cizallamiento",
+            opciones: [
+              ["Problema", 1],
+              ["Problema potencial", 2],
+              ["Sin problema aparente", 3]
+            ]
+          }
+        ],
+        calcular(v) {
+          const total = v.reduce((a, b) => a + b, 0);
+
+          let texto;
+          if (total <= 9) {
+            texto = "Puntuación compatible con riesgo muy alto.";
+          } else if (total <= 12) {
+            texto = "Puntuación compatible con riesgo alto.";
+          } else if (total <= 14) {
+            texto = "Puntuación compatible con riesgo moderado.";
+          } else if (total <= 18) {
+            texto = "Puntuación compatible con riesgo bajo.";
+          } else {
+            texto = "Puntuación superior a 18.";
+          }
+
+          return {
+            total,
+            texto,
+            nota: "Verificar los puntos de corte con el protocolo " +
+              "institucional. No utilizar estos rangos como diagnóstico " +
+              "ni como sustituto de la valoración de la piel."
+          };
+        }
+      },
+
+      morse: {
+        titulo: "Escala de Morse",
+        descripcion: "Selecciona la respuesta correspondiente a cada factor.",
+        preguntas: [
+          {
+            id: "caidas",
+            texto: "Antecedentes de caídas",
+            opciones: [["No", 0], ["Sí", 25]]
+          },
+          {
+            id: "diagnostico",
+            texto: "Diagnóstico secundario",
+            opciones: [["No", 0], ["Sí", 15]]
+          },
+          {
+            id: "ayuda",
+            texto: "Ayuda para deambular",
+            opciones: [
+              ["Ninguna, reposo o asistencia", 0],
+              ["Bastón, muletas o andador", 15],
+              ["Se apoya en muebles", 30]
+            ]
+          },
+          {
+            id: "iv",
+            texto: "Terapia intravenosa o acceso IV",
+            opciones: [["No", 0], ["Sí", 20]]
+          },
+          {
+            id: "marcha",
+            texto: "Marcha",
+            opciones: [
+              ["Normal, reposo o silla de ruedas", 0],
+              ["Débil", 10],
+              ["Alterada", 20]
+            ]
+          },
+          {
+            id: "mental",
+            texto: "Estado mental",
+            opciones: [
+              ["Reconoce sus limitaciones", 0],
+              ["Sobreestima sus capacidades u olvida limitaciones", 15]
+            ]
+          }
+        ],
+        calcular(v) {
+          const total = v.reduce((a, b) => a + b, 0);
+
+          let texto;
+          if (total < 25) {
+            texto = "Riesgo bajo según el esquema convencional.";
+          } else if (total < 45) {
+            texto = "Riesgo moderado según el esquema convencional.";
+          } else {
+            texto = "Riesgo alto según el esquema convencional.";
+          }
+
+          return {
+            total,
+            texto,
+            nota: "Los puntos de corte pueden variar por protocolo. " +
+              "Relacionar el resultado con la valoración clínica y las " +
+              "medidas institucionales de prevención de caídas."
+          };
+        }
+      },
+
+      dolor: {
+        titulo: "Escala numérica del dolor",
+        descripcion:
+          "Registra la intensidad del dolor comunicada por el paciente.",
+        preguntas: [
+          {
+            id: "intensidad",
+            texto: "Intensidad del dolor",
+            opciones: Array.from({ length: 11 }, (_, i) => [
+              i === 0 ? "0 — Sin dolor" :
+              i === 10 ? "10 — Peor dolor imaginable" : String(i),
+              i
+            ])
+          }
+        ],
+        calcular(v) {
+          const total = v[0];
+
+          let texto;
+          if (total === 0) {
+            texto = "Sin dolor referido.";
+          } else if (total <= 3) {
+            texto = "Dolor leve, según una clasificación habitual.";
+          } else if (total <= 6) {
+            texto = "Dolor moderado, según una clasificación habitual.";
+          } else {
+            texto = "Dolor intenso, según una clasificación habitual.";
+          }
+
+          return {
+            total,
+            texto,
+            nota: "Este instrumento es una escala numérica, no una EVA " +
+              "visual. Registrar también localización, características, " +
+              "duración y respuesta a las intervenciones."
+          };
+        }
+      }
+    };
+
+    const panel = document.getElementById("panel");
+    const formulario = document.getElementById("formulario");
+    const preguntas = document.getElementById("preguntas");
+    const resultado = document.getElementById("resultado");
+
+    let actual = null;
+
+    document.querySelectorAll("[data-escala]").forEach((boton) => {
+      boton.addEventListener("click", () => abrir(boton.dataset.escala));
+    });
+
+    function abrir(nombre) {
+      actual = datos[nombre];
+
+      document.getElementById("titulo").textContent = actual.titulo;
+      document.getElementById("descripcion").textContent =
+        actual.descripcion;
+
+      preguntas.replaceChildren();
+      resultado.hidden = true;
+
+      actual.preguntas.forEach((pregunta) => {
+        const campo = document.createElement("div");
+        campo.className = "campo";
+
+        const etiqueta = document.createElement("label");
+        etiqueta.htmlFor = pregunta.id;
+        etiqueta.textContent = pregunta.texto;
+
+        const select = document.createElement("select");
+        select.id = pregunta.id;
+        select.required = true;
+
+        const inicial = document.createElement("option");
+        inicial.value = "";
+        inicial.textContent = "Selecciona una respuesta";
+        inicial.disabled = true;
+        inicial.selected = true;
+        select.appendChild(inicial);
+
+        pregunta.opciones.forEach(([texto, valor]) => {
+          const opcion = document.createElement("option");
+          opcion.value = String(valor);
+          opcion.textContent = `${texto} (${valor} puntos)`;
+          select.appendChild(opcion);
+        });
+
+        campo.append(etiqueta, select);
+        preguntas.appendChild(campo);
+      });
+
+      panel.hidden = false;
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    formulario.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+
+      if (!actual || !formulario.reportValidity()) return;
+
+      const valores = actual.preguntas.map((pregunta) =>
+        Number(document.getElementById(pregunta.id).value)
+      );
+
+      const r = actual.calcular(valores);
+
+      document.getElementById("casoResultado").textContent =
+        "Caso: " +
+        (document.getElementById("caso").value.trim() ||
+         "Caso simulado sin identificador");
+
+      document.getElementById("puntuacion").textContent =
+        "Puntuación: " + r.total;
+
+      document.getElementById("interpretacion").textContent = r.texto;
+      document.getElementById("recomendacion").textContent = r.nota;
+
+      resultado.hidden = false;
+      resultado.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    document.getElementById("limpiar").addEventListener("click", () => {
+      formulario.reset();
+      document.getElementById("caso").value = "";
+      resultado.hidden = true;
+    });
+
+    document.getElementById("imprimir").addEventListener("click", () => {
+      if (resultado.hidden) {
+        alert("Primero calcula una puntuación.");
+        return;
+      }
+      window.print();
+    });
+  </script>
+</body>
+</html>
