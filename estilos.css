@@ -2116,11 +2116,16 @@ select:focus-visible {
 }
 
 @media (max-width: 1000px) {
-  .primary-nav__inner {
-    justify-content: flex-start;
-    gap: 23px;
-    overflow-x: auto;
-    scrollbar-width: none;
+.primary-nav__inner {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0 23px;
+  overflow: visible;
+}
+
+.primary-nav__inner::-webkit-scrollbar {
+  display: none;
+}
   }
 
   .primary-nav__inner::-webkit-scrollbar {
