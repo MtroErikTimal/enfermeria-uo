@@ -163,6 +163,46 @@
         box-shadow: none;
       }
     }
+    /* Clasificación visual de resultados */
+.etiqueta-riesgo {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+}
+
+.resultado.riesgo-bajo {
+  background: #F0FDF4;
+  border-left: 6px solid #16A34A;
+}
+
+.riesgo-bajo .etiqueta-riesgo {
+  color: #166534;
+  background: #DCFCE7;
+}
+
+.resultado.riesgo-medio {
+  background: #FFFBEB;
+  border-left: 6px solid #F59E0B;
+}
+
+.riesgo-medio .etiqueta-riesgo {
+  color: #92400E;
+  background: #FEF3C7;
+}
+
+.resultado.riesgo-alto {
+  background: #FEF2F2;
+  border-left: 6px solid #DC2626;
+}
+
+.riesgo-alto .etiqueta-riesgo {
+  color: #991B1B;
+  background: #FEE2E2;
+}
   </style>
 </head>
 
@@ -584,10 +624,56 @@
       document.getElementById("puntuacion").textContent =
         "Puntuación: " + r.total;
 
-      document.getElementById("interpretacion").textContent = r.texto;
-      document.getElementById("recomendacion").textContent = r.nota;
+document.getElementById("interpretacion").textContent = r.texto;
+document.getElementById("recomendacion").textContent = r.nota;
 
-      resultado.hidden = false;
+// Clasificar el resultado según el instrumento evaluado
+const interpretacion = r.texto.toLowerCase();
+let nivel = "medio";
+
+if (
+  interpretacion.includes("riesgo bajo") ||
+  interpretacion.includes("sin riesgo") ||
+  interpretacion.includes("riesgo leve") ||
+  interpretacion.includes("dolor leve") ||
+  interpretacion.includes("alteración leve")
+) {
+  nivel = "bajo";
+} else if (
+  interpretacion.includes("riesgo alto") ||
+  interpretacion.includes("riesgo elevado") ||
+  interpretacion.includes("riesgo muy alto") ||
+  interpretacion.includes("riesgo severo") ||
+  interpretacion.includes("dolor intenso") ||
+  interpretacion.includes("alteración grave")
+) {
+  nivel = "alto";
+}
+
+resultado.classList.remove(
+  "riesgo-bajo",
+  "riesgo-medio",
+  "riesgo-alto"
+);
+
+resultado.classList.add("riesgo-" + nivel);
+
+// Mostrar la clasificación
+let etiquetaRiesgo = resultado.querySelector(".etiqueta-riesgo");
+
+if (!etiquetaRiesgo) {
+  etiquetaRiesgo = document.createElement("div");
+  etiquetaRiesgo.className = "etiqueta-riesgo";
+  etiquetaRiesgo.id = "etiquetaRiesgo";
+  resultado.prepend(etiquetaRiesgo);
+}
+
+etiquetaRiesgo.textContent =
+  nivel === "bajo" ? "RIESGO BAJO" :
+  nivel === "medio" ? "RIESGO MEDIO" :
+  "RIESGO ALTO";
+
+resultado.hidden = false;
       resultado.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
 
