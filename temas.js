@@ -79,9 +79,6 @@ window.UO_TEMAS = [
   },
   {
     id: "exploracion-fisica",
-    [
-  {
-    id: "exploracion-fisica",
     titulo: "Exploración Física del Paciente",
     unidad: "valoracion",
     resumen: "Procedimiento de enfermería que permite valorar de manera sistemática el estado físico del paciente e identificar hallazgos relevantes para su atención.",
@@ -134,67 +131,6 @@ window.UO_TEMAS = [
       "Ignorar molestias o cambios en el estado del paciente."
     ],
     evidencia: "Elabora una lista de verificación de la exploración física e identifica las técnicas empleadas, los signos vitales, las medidas de seguridad y los hallazgos que deben registrarse."
-  },
-  {
-    id: "movilizacion-paciente",
-    titulo: "Movilización del Paciente",
-    unidad: "cuidados-basicos",
-    resumen: "Conjunto de técnicas para cambiar de posición, ayudar al movimiento y trasladar al paciente de forma segura, protegiendo su integridad y la del personal de enfermería.",
-    conceptos: [
-      "Mecánica corporal",
-      "Cambios de posición",
-      "Movilización activa y pasiva",
-      "Transferencia cama-silla",
-      "Alineación corporal",
-      "Prevención de caídas",
-      "Uso de ayudas técnicas"
-    ],
-    objetivo: "Identificar y aplicar principios básicos de movilización para favorecer la comodidad, la autonomía y la seguridad del paciente, disminuyendo el riesgo de lesiones.",
-    introduccion: "La movilización del paciente consiste en ayudarlo a cambiar de posición, incorporarse, sentarse, levantarse o trasladarse, de acuerdo con su capacidad física y condición clínica. Una técnica adecuada contribuye a prevenir complicaciones relacionadas con la inmovilidad, como lesiones por presión y pérdida de movilidad, y reduce el riesgo de lesiones musculoesqueléticas del personal.",
-    materiales: [
-      "Cama hospitalaria con frenos funcionales",
-      "Sábana clínica o sábana deslizante, según la técnica",
-      "Silla de ruedas o sillón, cuando corresponda",
-      "Cinturón de marcha, si está indicado y se cuenta con capacitación",
-      "Grúa u otras ayudas mecánicas, cuando sean necesarias",
-      "Calzado antideslizante",
-      "Equipo de protección según el riesgo"
-    ],
-    pasos: [
-      "Valora la movilidad, fuerza, equilibrio, dolor, nivel de conciencia y capacidad de colaboración del paciente.",
-      "Revisa las restricciones médicas, dispositivos, sondas, catéteres y riesgos de caída.",
-      "Explica la maniobra y solicita la colaboración y el consentimiento del paciente.",
-      "Determina el número de personas necesarias y selecciona las ayudas técnicas adecuadas.",
-      "Prepara el entorno, despeja el área y asegura los frenos de la cama, silla o camilla.",
-      "Ajusta la altura de la cama y utiliza una postura ergonómica, evitando giros bruscos y esfuerzos innecesarios.",
-      "Realiza el cambio de posición, la incorporación o la transferencia mediante la técnica aprendida y con apoyo suficiente.",
-      "Alinea el cuerpo, verifica la comodidad y coloca al paciente en una posición segura.",
-      "Comprueba la estabilidad, el estado general y la correcta colocación de los dispositivos.",
-      "Deja el timbre y los objetos necesarios al alcance, y registra la movilización, la tolerancia y cualquier incidencia."
-    ],
-    precauciones: [
-      "No movilizar sin valorar previamente la condición clínica y las restricciones existentes.",
-      "Solicitar ayuda adicional o utilizar equipos mecánicos cuando el peso, la dependencia o el riesgo lo requieran.",
-      "Evitar traccionar de brazos, piernas, sondas o catéteres.",
-      "Suspender la maniobra ante dolor intenso, mareo, dificultad respiratoria o inestabilidad."
-    ],
-    seguridad: [
-      "Mantener frenos activados y entorno libre de obstáculos.",
-      "Proteger vías, sondas, drenajes y otros dispositivos durante la movilización.",
-      "Aplicar medidas de prevención de caídas y lesiones por presión.",
-      "Respetar la dignidad, intimidad y capacidad de decisión del paciente.",
-      "Utilizar ayudas mecánicas y técnicas ergonómicas para reducir lesiones del personal."
-    ],
-    errores: [
-      "Movilizar sin valorar la capacidad física del paciente.",
-      "Intentar levantar solo a una persona que requiere ayuda adicional.",
-      "Realizar movimientos bruscos o tirar de las extremidades.",
-      "Olvidar bloquear los frenos o despejar el entorno.",
-      "Dejar al paciente en una posición inestable o sin medidas de seguridad."
-    ],
-    evidencia: "Realiza una demostración supervisada de un cambio de posición y una transferencia apropiada al nivel de movilidad del paciente. Identifica los riesgos, las ayudas utilizadas y las medidas de seguridad."
-  }
-]
   },
   {
     id: "mecánica-corporal",
