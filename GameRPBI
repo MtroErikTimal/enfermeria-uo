@@ -1,0 +1,465 @@
+
+import { useState } from "react";
+
+type Option = {
+  id: string;
+  name: string;
+  color: string;
+  description: string;
+};
+
+type Question = {
+  id: number;
+  image: string;
+  item: string;
+  context: string;
+  correct: string;
+  explanation: string;
+};
+
+const options: Option[] = [
+  {
+    id: "red-liquid",
+    name: "Recipiente hermético rojo",
+    color: "#c62828",
+    description: "Sangre líquida",
+  },
+  {
+    id: "red-bag",
+    name: "Bolsa roja",
+    color: "#ef4444",
+    description: "Cultivos y residuos no anatómicos sólidos",
+  },
+  {
+    id: "yellow-bag",
+    name: "Bolsa amarilla",
+    color: "#eab308",
+    description: "Residuos patológicos sólidos",
+  },
+  {
+    id: "yellow-liquid",
+    name: "Recipiente hermético amarillo",
+    color: "#ca8a04",
+    description: "Residuos patológicos líquidos",
+  },
+  {
+    id: "red-sharps",
+    name: "Recipiente rígido rojo",
+    color: "#b91c1c",
+    description: "Objetos punzocortantes RPBI",
+  },
+];
+
+const questions: Question[] = [
+  {
+    id: 1,
+    image: "🩸",
+    item: "Sangre líquida",
+    context: "Muestra de sangre líquida generada durante la atención.",
+    correct: "red-liquid",
+    explanation:
+      "La sangre y sus componentes en forma líquida se depositan en un recipiente hermético rojo.",
+  },
+  {
+    id: 2,
+    image: "🧫",
+    item: "Cultivo microbiológico",
+    context: "Cultivo sólido generado en el laboratorio.",
+    correct: "red-bag",
+    explanation:
+      "Los cultivos y cepas de agentes biológico-infecciosos y sus utensilios desechables se clasifican como RPBI. Para los residuos sólidos se utiliza bolsa roja.",
+  },
+  {
+    id: 3,
+    image: "🧬",
+    item: "Tejido humano",
+    context: "Tejido quirúrgico que no se encuentra en formol.",
+    correct: "yellow-bag",
+    explanation:
+      "Los residuos patológicos sólidos que cumplen los criterios de la NOM-087 se depositan en bolsa amarilla.",
+  },
+  {
+    id: 4,
+    image: "💉",
+    item: "Aguja usada",
+    context: "Aguja que estuvo en contacto con un paciente.",
+    correct: "red-sharps",
+    explanation:
+      "Las agujas y otros punzocortantes que cumplen los criterios de RPBI se depositan en un recipiente rígido rojo. No deben reencapucharse ni manipularse innecesariamente.",
+  },
+  {
+    id: 5,
+    image: "🩹",
+    item: "Material de curación saturado",
+    context: "Gasa empapada de sangre durante una curación.",
+    correct: "red-bag",
+    explanation:
+      "Los materiales de curación empapados, saturados o goteando sangre son residuos no anatómicos sólidos y van en bolsa roja.",
+  },
+  {
+    id: 6,
+    image: "🧪",
+    item: "Muestra patológica líquida",
+    context: "Muestra biológica patológica que cumple los criterios de la norma.",
+    correct: "yellow-liquid",
+    explanation:
+      "Los residuos patológicos líquidos que cumplen la definición de la NOM-087 se depositan en recipiente hermético amarillo.",
+  },
+  {
+    id: 7,
+    image: "🩸",
+    item: "Recipiente con sangre líquida",
+    context: "Recipiente desechable que contiene sangre líquida.",
+    correct: "red-bag",
+    explanation:
+      "La NOM-087 incluye los recipientes desechables que contienen sangre líquida dentro de los residuos no anatómicos. En esta actividad se considera el recipiente sólido como residuo no anatómico que va en bolsa roja. La sangre líquida por separado va en recipiente hermético rojo.",
+  },
+  {
+    id: 8,
+    image: "🔬",
+    item: "Material desechable de cultivo",
+    context: "Utensilio desechable utilizado para transferir un cultivo infeccioso.",
+    correct: "red-bag",
+    explanation:
+      "Los utensilios desechables empleados para contener, transferir, inocular o mezclar cultivos se consideran dentro de la categoría de cultivos y cepas.",
+  },
+  {
+    id: 9,
+    image: "🗡️",
+    item: "Hoja de bisturí usada",
+    context: "Punzocortante que estuvo en contacto con una muestra biológica.",
+    correct: "red-sharps",
+    explanation:
+      "Las hojas de bisturí y otros punzocortantes incluidos en la norma van en un recipiente rígido rojo, resistente a perforaciones y con cierre seguro.",
+  },
+  {
+    id: 10,
+    image: "🧻",
+    item: "Papel de envoltura limpio",
+    context: "Envoltura exterior limpia, sin contaminación biológica.",
+    correct: "ordinary",
+    explanation:
+      "No todo residuo generado en un hospital es RPBI. La envoltura limpia se separa como residuo común según el sistema institucional.",
+  },
+];
+
+const allOptions: Option[] = [
+  ...options,
+  {
+    id: "ordinary",
+    name: "Residuo común",
+    color: "#64748b",
+    description: "Material no contaminado y no clasificado como RPBI",
+  },
+];
+
+const shuffle = <T,>(items: T[]): T[] =>
+  [...items].sort(() => Math.random() - 0.5);
+
+export default function RPBIGame() {
+  const [game, setGame] = useState(() => shuffle(questions));
+  const [index, setIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [selected, setSelected] = useState<string | null>(null);
+  const [finished, setFinished] = useState(false);
+
+  const current = game[index];
+  const correctOption = allOptions.find(
+    (option) => option.id === current?.correct
+  );
+
+  function answer(id: string) {
+    if (selected !== null || finished) return;
+
+    setSelected(id);
+
+    if (id === current.correct) {
+      setScore((previous) => previous + 1);
+    }
+  }
+
+  function next() {
+    if (index + 1 >= game.length) {
+      setFinished(true);
+      return;
+    }
+
+    setIndex((previous) => previous + 1);
+    setSelected(null);
+  }
+
+  function restart() {
+    setGame(shuffle(questions));
+    setIndex(0);
+    setScore(0);
+    setSelected(null);
+    setFinished(false);
+  }
+
+  const buttonStyle = {
+    padding: "14px",
+    borderRadius: "12px",
+    border: "1px solid #dbe3ed",
+    background: "#ffffff",
+    color: "#172033",
+    textAlign: "left" as const,
+    cursor: "pointer",
+    fontSize: "14px",
+    width: "100%",
+  };
+
+  return (
+    <main
+      style={{
+        maxWidth: 850,
+        margin: "0 auto",
+        padding: 20,
+        fontFamily: "system-ui, sans-serif",
+        color: "#172033",
+      }}
+    >
+      <header
+        style={{
+          background: "#123d35",
+          color: "white",
+          padding: 24,
+          borderRadius: 20,
+          marginBottom: 20,
+        }}
+      >
+        <div style={{ fontSize: 12, letterSpacing: 2 }}>
+          SIMULADOR EDUCATIVO DE ENFERMERÍA
+        </div>
+        <h1 style={{ marginBottom: 8 }}>♻️ Misión RPBI</h1>
+        <p style={{ margin: 0 }}>
+          Identifica cada residuo y deposítalo correctamente.
+        </p>
+      </header>
+
+      {!finished ? (
+        <>
+          <section
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 12,
+              marginBottom: 12,
+              flexWrap: "wrap",
+            }}
+          >
+            <strong>
+              Pregunta {index + 1} de {game.length}
+            </strong>
+            <strong>⭐ Puntos: {score}</strong>
+          </section>
+
+          <div
+            style={{
+              height: 8,
+              background: "#e2e8f0",
+              borderRadius: 10,
+              marginBottom: 20,
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                height: "100%",
+                width: `${((index + 1) / game.length) * 100}%`,
+                background: "#16a34a",
+                transition: "width .3s",
+              }}
+            />
+          </div>
+
+          <section
+            style={{
+              border: "1px solid #e2e8f0",
+              borderRadius: 18,
+              padding: 24,
+              marginBottom: 20,
+              textAlign: "center",
+              background: "#f8fafc",
+            }}
+          >
+            <div style={{ fontSize: 76 }}>{current.image}</div>
+            <h2 style={{ marginBottom: 8 }}>{current.item}</h2>
+            <p>{current.context}</p>
+            <p style={{ fontWeight: 600 }}>
+              ¿Dónde debes depositar este residuo?
+            </p>
+          </section>
+
+          <h3>Selecciona el contenedor</h3>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: 12,
+            }}
+          >
+            {allOptions.map((option) => {
+              const isCorrect = option.id === current.correct;
+              const isSelected = option.id === selected;
+
+              let background = "#ffffff";
+              let border = "1px solid #dbe3ed";
+
+              if (selected && isCorrect) {
+                background = "#dcfce7";
+                border = "2px solid #16a34a";
+              } else if (isSelected && !isCorrect) {
+                background = "#fee2e2";
+                border = "2px solid #dc2626";
+              }
+
+              return (
+                <button
+                  key={option.id}
+                  onClick={() => answer(option.id)}
+                  disabled={selected !== null}
+                  style={{
+                    ...buttonStyle,
+                    background,
+                    border,
+                    opacity: selected && !isCorrect && !isSelected ? 0.65 : 1,
+                    cursor: selected ? "default" : "pointer",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: 12,
+                      alignItems: "center",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 40,
+                        height: 48,
+                        borderRadius: 8,
+                        flexShrink: 0,
+                        background: option.color,
+                        border: "2px solid #ffffff",
+                        boxShadow: "0 0 0 1px #cbd5e1",
+                      }}
+                    />
+                    <div>
+                      <strong>{option.name}</strong>
+                      <div
+                        style={{
+                          fontSize: 12,
+                          color: "#64748b",
+                          marginTop: 4,
+                        }}
+                      >
+                        {option.description}
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {selected !== null && (
+            <section
+              aria-live="polite"
+              style={{
+                marginTop: 20,
+                padding: 18,
+                borderRadius: 14,
+                background:
+                  selected === current.correct ? "#dcfce7" : "#fef3c7",
+                border: "1px solid #d1d5db",
+              }}
+            >
+              <h3 style={{ marginTop: 0 }}>
+                {selected === current.correct
+                  ? "✅ ¡Correcto!"
+                  : "📘 Sigue aprendiendo"}
+              </h3>
+              <p>
+                <strong>Clasificación:</strong>{" "}
+                {correctOption?.name ?? "Residuo común"}
+              </p>
+              <p>{current.explanation}</p>
+              <button
+                onClick={next}
+                style={{
+                  background: "#123d35",
+                  color: "white",
+                  border: 0,
+                  padding: "12px 20px",
+                  borderRadius: 10,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                }}
+              >
+                {index + 1 === game.length
+                  ? "Ver resultado"
+                  : "Siguiente residuo →"}
+              </button>
+            </section>
+          )}
+        </>
+      ) : (
+        <section
+          style={{
+            padding: 28,
+            borderRadius: 20,
+            border: "1px solid #dbe3ed",
+            textAlign: "center",
+          }}
+        >
+          <div style={{ fontSize: 64 }}>
+            {score >= 8 ? "🏆" : score >= 6 ? "👏" : "📚"}
+          </div>
+          <h2>¡Misión completada!</h2>
+          <p>
+            Obtuviste <strong>{score} de {game.length}</strong> respuestas
+            correctas.
+          </p>
+          <p style={{ fontSize: 32, fontWeight: 800 }}>
+            {Math.round((score / game.length) * 100)}%
+          </p>
+          <p>
+            {score >= 8
+              ? "Excelente trabajo. Continúa aplicando las normas de bioseguridad."
+              : "Repasa los tipos de RPBI y vuelve a intentarlo."}
+          </p>
+          <button
+            onClick={restart}
+            style={{
+              background: "#123d35",
+              color: "white",
+              border: 0,
+              padding: "14px 22px",
+              borderRadius: 10,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            🔄 Jugar de nuevo
+          </button>
+        </section>
+      )}
+
+      <footer
+        style={{
+          marginTop: 24,
+          padding: 14,
+          background: "#f1f5f9",
+          borderRadius: 12,
+          fontSize: 12,
+          color: "#475569",
+        }}
+      >
+        Material educativo basado en la NOM-087-ECOL-SSA1-2002.
+        Verifica los protocolos institucionales vigentes. Las imágenes
+        representadas con emojis son ilustrativas.
+      </footer>
+    </main>
+  );
+}
