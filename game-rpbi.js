@@ -6,31 +6,31 @@
       id: "red-liquid",
       name: "Recipiente hermético rojo",
       color: "#c62828",
-      description: "Sangre líquida",
+      description: "Líquidos",
     },
     {
       id: "red-bag",
       name: "Bolsa roja",
       color: "#ef4444",
-      description: "Cultivos y residuos no anatómicos sólidos",
+      description: "Sólidos",
     },
     {
       id: "yellow-bag",
       name: "Bolsa amarilla",
       color: "#eab308",
-      description: "Residuos patológicos sólidos",
+      description: "Sólidos",
     },
     {
       id: "yellow-liquid",
       name: "Recipiente hermético amarillo",
       color: "#ca8a04",
-      description: "Residuos patológicos líquidos",
+      description: "Líquidos",
     },
     {
       id: "red-sharps",
       name: "Recipiente rígido rojo",
       color: "#b91c1c",
-      description: "Objetos punzocortantes RPBI",
+      description: "Solidos",
     },
   ];
 
