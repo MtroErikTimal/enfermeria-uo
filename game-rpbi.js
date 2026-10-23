@@ -133,7 +133,7 @@
       id: "ordinary",
       name: "Residuo común",
       color: "#64748b",
-      description: "Bolsa de cualquir color excepto roja o amarilla",
+      description: "Bolsa de cualquier color excepto roja o amarilla",
     },
   ];
 
