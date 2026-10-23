@@ -133,7 +133,7 @@
       id: "ordinary",
       name: "Residuo común",
       color: "#64748b",
-      description: "Material no contaminado y no clasificado como RPBI",
+      description: "Bolsa de cualquir color excepto roja o amarilla",
     },
   ];
 
