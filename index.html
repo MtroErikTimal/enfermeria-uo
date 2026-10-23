@@ -18,6 +18,7 @@
   <script src="./procedimientos.js" defer></script>
   <script src="./evaluaciones.js" defer></script>
   <script src="./recursos.js" defer></script>
+  <script src="./game-rpbi.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
@@ -52,7 +53,7 @@
         </button>
       </div>
     </div>
-<nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
+  <nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
   <div class="container primary-nav__inner">
     <a href="#inicio">Inicio</a>
     <a href="#asignaturas">Asignaturas</a>
@@ -103,8 +104,8 @@
           <h2 id="welcomeTitle">Una formación que empieza <span>con buenos fundamentos.</span></h2>
         </div>
         <div class="welcome-copy">
-          <p>Te damos la bienvenida a este espacio educativo de la Licenciatura en Enfermería de la Universidad de Oriente. Aquí encontrarás materiales de apoyo para estudiar, practicar y reflexionar sobre el cuidado profesional.</p>
-          <p>Los contenidos iniciales corresponden a <strong>Fundamentos de Enfermería I</strong>. Se presentan como recursos didácticos y deben complementarse con la guía docente, los protocolos institucionales y las fuentes académicas indicadas en tu curso.</p>
+          <p>Te damos la bienvenida a este espacio educativo de la Licenciatura en Enfermería de la Universidad de Oriente. Aquí encontrarás materiales de apoyo para estudiar, practicar y reflexionar sobre la atención clínica y el cuidado.</p>
+          <p>Los contenidos iniciales corresponden a <strong>Fundamentos de Enfermería I</strong>. Se presentan como recursos didácticos y deben complementarse con la guía docente, los protocolos institucionales y la orientación del profesorado.</p>
           <a class="text-link" href="#asignaturas">Conoce las asignaturas <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -199,6 +200,19 @@
       </div>
     </section>
 
+    <section class="section-shell" id="rpbiGameSection" aria-labelledby="rpbiGameTitle">
+      <div class="container">
+        <div class="section-heading section-heading--row">
+          <div>
+            <p class="eyebrow">Simulador</p>
+            <h2 id="rpbiGameTitle">Clasificación de residuos biológico-infecciosos</h2>
+          </div>
+          <p class="section-heading__aside">Identifica el tipo de residuo y su correcta disposición según la normativa institucional.</p>
+        </div>
+        <div id="rpbiGame"></div>
+      </div>
+    </section>
+
     <section class="materials-section section-shell" id="materiales" aria-labelledby="materialsTitle">
       <div class="container materials-layout">
         <div>
@@ -248,9 +262,9 @@
         </div>
         <div class="calculator-card">
           <form id="calculatorForm" novalidate>
-            <div class="calculator-field"><label for="dose">Dosis indicada</label><div class="calculator-input"><input id="dose" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 250" required><select id="doseUnit" aria-label="Unidad de la dosis"><option value="mcg">mcg</option><option value="mg" selected>mg</option><option value="g">g</option></select></div></div>
-            <div class="calculator-field"><label for="dilutionVolume">Volumen final de dilución</label><div class="calculator-input"><input id="dilutionVolume" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 5" required><span class="unit-label">mL</span></div><small>Utiliza el volumen final de la preparación.</small></div>
-            <div class="calculator-field"><label for="presentation">Presentación del medicamento</label><div class="calculator-input"><input id="presentation" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 500" required><select id="presentationUnit" aria-label="Unidad de la presentación"><option value="mcg">mcg</option><option value="mg" selected>mg</option><option value="g">g</option></select></div></div>
+            <div class="calculator-field"><label for="dose">Dosis indicada</label><div class="calculator-input"><input id="dose" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 250"><select id="doseUnit"><option value="mg">mg</option><option value="g">g</option><option value="mcg">mcg</option></select></div></div>
+            <div class="calculator-field"><label for="dilutionVolume">Volumen final de dilución</label><div class="calculator-input"><input id="dilutionVolume" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 100"><span>mL</span></div></div>
+            <div class="calculator-field"><label for="presentation">Presentación del medicamento</label><div class="calculator-input"><input id="presentation" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 500"><select id="presentationUnit"><option value="mg">mg</option><option value="g">g</option><option value="mcg">mcg</option></select></div></div>
             <div class="calculator-actions"><button class="button button--primary" type="submit">Calcular volumen</button><button class="button button--outline" id="clearCalculator" type="button">Limpiar</button></div>
             <p class="calculator-message" id="calculatorMessage" role="status" aria-live="polite"></p>
             <div class="calculator-result" id="calculatorResult" hidden aria-live="polite"><span>Volumen calculado</span><strong id="calculatorValue"></strong><p id="calculatorDetail"></p></div>
@@ -269,7 +283,7 @@
             <figcaption>Formación para el cuidado profesional</figcaption>
           </figure>
           <div class="about-copy">
-            <p>Esta plataforma es una base educativa digital para apoyar la formación de estudiantes de Enfermería. Inicia con Fundamentos de Enfermería I y está organizada para ampliar asignaturas, temas, procedimientos, materiales y evaluaciones.</p>
+            <p>Esta plataforma es una base educativa digital para apoyar la formación de estudiantes de Enfermería. Inicia con Fundamentos de Enfermería I y está organizada para ampliar asignaturas, procedimientos y recursos didácticos.</p>
             <p>El portal no representa un sistema de gestión académica ni almacena calificaciones oficiales. El seguimiento de estudio se guarda localmente en el navegador de este dispositivo.</p>
             <p class="about-credit"><span>Diseño y desarrollo</span><strong>Mtro. Erik Rivera Timal</strong></p>
             <a class="text-link" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a>
@@ -280,18 +294,18 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container site-footer__main"><a class="brand brand--footer" href="#inicio"><img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente"><span class="brand__copy"><strong>Universidad de Oriente</strong><span>Licenciatura en Enfermería</span></span></a><p>Espacio educativo · Fundamentos de Enfermería I</p><a href="#inicio">Volver arriba ↑</a></div>
+    <div class="container site-footer__main"><a class="brand brand--footer" href="#inicio"><img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente"><span class="brand__copy"><strong>Universidad de Oriente</strong><span>Licenciatura en Enfermería</span></span></a><div class="site-footer__links"><a href="#fundamentos">Fundamentos</a><a href="#procedimientos">Procedimientos</a><a href="#recursos">Recursos</a></div></div>
     <div class="container site-footer__legal"><span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span><span>Diseño y desarrollo: Mtro. Erik Rivera Timal</span></div>
   </footer>
 
   <dialog class="content-dialog" id="topicDialog" aria-labelledby="dialogTitle">
-    <div class="dialog-topline"><span class="eyebrow" id="dialogCategory">Fundamentos de Enfermería I</span>    <button class="dialog-close" id="dialogClose" type="button" data-close-dialog aria-label="Cerrar contenido">×</button></div>
+    <div class="dialog-topline"><span class="eyebrow" id="dialogCategory">Fundamentos de Enfermería I</span><button class="dialog-close" id="dialogClose" type="button" data-close-dialog aria-label="Cerrar tema">×</button></div>
     <div class="dialog-body">
       <p class="dialog-index" id="dialogIndex"></p><h2 id="dialogTitle"></h2><p class="dialog-objective" id="dialogObjective"></p>
       <div class="dialog-progress"><div class="progress-track"><span id="dialogProgressBar"></span></div><span id="dialogProgressText"></span></div>
       <div class="dialog-content-grid" id="dialogSections"></div>
     </div>
-    <div class="dialog-actions"><button class="button button--outline" id="previousTopic" type="button">← Anterior</button><button class="button button--primary" id="markStudied" type="button">Marcar como estudiado</button><button class="button button--outline" id="nextTopic" type="button">Siguiente →</button></div>
+    <div class="dialog-actions"><button class="button button--outline" id="previousTopic" type="button">← Anterior</button><button class="button button--primary" id="nextTopic" type="button">Siguiente →</button><button class="button button--subtle" id="markStudied" type="button">Marcar como estudiado</button></div>
   </dialog>
   <dialog class="content-dialog content-dialog--procedure" id="procedureDialog" aria-labelledby="procedureDialogTitle">
     <div class="dialog-topline"><span class="eyebrow">Guía académica de procedimiento</span><button class="dialog-close" type="button" data-close-dialog aria-label="Cerrar procedimiento">×</button></div>
