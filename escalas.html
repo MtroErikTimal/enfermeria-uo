@@ -4,12 +4,195 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#102a43">
-  <meta name="description" content="Recursos académicos de Enfermería UO.">
-  <title>Recursos | Enfermería UO</title>
+  <meta name="description" content="Escalas de valoración de Enfermería.">
+  <title>Escalas de valoración | Enfermería UO</title>
   <link rel="stylesheet" href="./estilos.css">
+  <style>
+    :root {
+      --uo-navy: #102a43;
+      --uo-navy-dark: #0b2036;
+      --uo-blue: #294e6c;
+      --uo-teal: #315c7d;
+      --uo-canvas: #f4f6f8;
+      --uo-paper: #fff;
+      --uo-line: #dce4eb;
+      --uo-muted: #647381;
+      --uo-ink: #1b2d3a;
+      --uo-success: #16866a;
+      --uo-warning: #d9a000;
+      --uo-badge-low: #DCFCE7;
+      --uo-badge-mid: #FEF3C7;
+      --uo-badge-high: #FEE2E2;
+    }
+
+    body {
+      margin: 0;
+      background: var(--uo-canvas);
+      color: var(--uo-ink);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .page-shell {
+      padding-block: 64px 28px;
+    }
+
+    .page-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .page-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 200px;
+      padding: 22px 20px;
+      border: 1px solid var(--uo-line);
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 8px 20px rgba(16, 42, 67, 0.04);
+    }
+
+    .page-card h2 {
+      margin: 0;
+      color: var(--uo-navy);
+      font-size: 22px;
+    }
+
+    .page-card p {
+      margin: 0;
+      color: #536473;
+      line-height: 1.7;
+    }
+
+    .page-card button,
+    .page-card .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin-top: auto;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--uo-success);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .page-card .secundario {
+      background: #e7eef5;
+      color: var(--uo-navy);
+    }
+
+    .escala-panel {
+      margin-top: 24px;
+      padding: 22px;
+      border: 1px solid var(--uo-line);
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 10px 26px rgba(16, 42, 67, 0.04);
+    }
+
+    .campo {
+      margin: 18px 0;
+    }
+
+    .campo label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 700;
+      color: var(--uo-navy);
+    }
+
+    .campo select,
+    .campo input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #b9c8d6;
+      border-radius: 9px;
+      background: white;
+      font-size: 15px;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .resultado {
+      margin-top: 22px;
+      padding: 18px;
+      border-left: 5px solid var(--uo-success);
+      border-radius: 10px;
+      background: #eaf7f1;
+    }
+
+    .resultado .puntuacion {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--uo-success);
+    }
+
+    .resultado .nota {
+      color: var(--uo-muted);
+      font-size: 13px;
+    }
+
+    .etiqueta-riesgo {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 9px 15px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: .95rem;
+      letter-spacing: .4px;
+    }
+
+    .resultado.riesgo-bajo {
+      background: #F0FDF4;
+      border-left-color: #16A34A;
+    }
+
+    .resultado.riesgo-bajo .etiqueta-riesgo {
+      color: #166534;
+      background: var(--uo-badge-low);
+    }
+
+    .resultado.riesgo-medio {
+      background: #FFFBEB;
+      border-left-color: #F59E0B;
+    }
+
+    .resultado.riesgo-medio .etiqueta-riesgo {
+      color: #92400E;
+      background: var(--uo-badge-mid);
+    }
+
+    .resultado.riesgo-alto {
+      background: #FEF2F2;
+      border-left-color: #DC2626;
+    }
+
+    .resultado.riesgo-alto .etiqueta-riesgo {
+      color: #991B1B;
+      background: var(--uo-badge-high);
+    }
+
+    @media (max-width: 760px) {
+      .page-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
   <header class="site-header">
     <div class="institutional-bar">
       <div class="container institutional-bar__inner">
@@ -17,73 +200,306 @@
         <a href="./index.html">Licenciatura en Enfermería · Universidad de Oriente</a>
       </div>
     </div>
+
     <div class="container masthead">
       <a class="brand" href="./index.html" aria-label="Ir al inicio">
         <span class="brand__logos">
-          <span class="logo-slot logo-slot--university"><img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente"></span>
+          <span class="logo-slot logo-slot--university">
+            <img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente">
+          </span>
           <span class="brand__divider" aria-hidden="true"></span>
-          <span class="logo-slot logo-slot--nursing"><img src="./img/logo-enfermeria.png" alt="Logotipo de la Licenciatura en Enfermería"></span>
+          <span class="logo-slot logo-slot--nursing">
+            <img src="./img/logo-enfermeria.png" alt="Logotipo de la Licenciatura en Enfermería">
+          </span>
         </span>
-        <span class="brand__copy"><strong>Enfermería</strong><span>Licenciatura en Enfermería</span></span>
+        <span class="brand__copy">
+          <strong>Enfermería</strong>
+          <span>Licenciatura en Enfermería</span>
+        </span>
       </a>
       <div class="header-actions">
         <a class="button button--subtle header-quick-link" href="./index.html">Inicio</a>
       </div>
     </div>
-    <nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
+
+    <nav class="primary-nav" aria-label="Navegación principal">
       <div class="container primary-nav__inner">
         <a href="./index.html">Inicio</a>
         <a href="./asignaturas.html">Asignaturas</a>
-        <a href="./fundamentos.html">Fundamentos de Enfermería I</a>
+        <a href="./fundamentos.html">Fundamentos</a>
         <a href="./procedimientos.html">Procedimientos</a>
-        <a href="./material-estudio.html">Material de estudio</a>
+        <a href="./material-estudio.html">Material</a>
         <a href="./evaluaciones.html">Evaluaciones</a>
         <a href="./recursos.html">Recursos</a>
-        <a href="./escalas.html">Escalas de valoración</a>
+        <a href="./escalas.html">Escalas</a>
       </div>
     </nav>
   </header>
 
   <main id="contenido">
+    <section class="page-shell">
+      <div class="container page-header">
+        <div class="page-header__content">
+          <p class="eyebrow">Herramientas clínicas</p>
+          <h1>Escalas de valoración</h1>
+        </div>
+      </div>
+    </section>
+
     <section class="section-shell section-shell--tinted">
       <div class="container">
-        <div class="section-heading section-heading--row">
-          <div><p class="eyebrow">Biblioteca académica</p><h2>Recursos</h2></div>
-          <p class="section-heading__aside">Enlaces y materiales de apoyo para complementar la formación y la práctica clínica.</p>
+        <div class="page-card-grid">
+          <article class="page-card">
+            <h2>Glasgow</h2>
+            <p>Valoración de las respuestas ocular, verbal y motora.</p>
+            <button type="button" data-escala="glasgow">Abrir escala</button>
+          </article>
+
+          <article class="page-card">
+            <h2>Braden</h2>
+            <p>Valoración del riesgo de lesiones por presión en adultos.</p>
+            <button type="button" data-escala="braden">Abrir escala</button>
+          </article>
+
+          <article class="page-card">
+            <h2>Morse</h2>
+            <p>Identificación de factores de riesgo de caídas.</p>
+            <button type="button" data-escala="morse">Abrir escala</button>
+          </article>
+
+          <article class="page-card">
+            <h2>Dolor numérico</h2>
+            <p>Registro de intensidad del dolor de 0 a 10.</p>
+            <button type="button" data-escala="dolor">Abrir escala</button>
+          </article>
         </div>
-        <div class="quick-grid">
-          <a class="quick-card" href="https://www.who.int/health-topics/patient-safety" target="_blank" rel="noopener noreferrer">
-            <span class="quick-card__icon" aria-hidden="true">01</span>
-            <span class="quick-card__meta">Enlaces</span>
-            <strong>Seguridad del paciente · OMS</strong>
-            <span class="quick-card__foot">Abrir enlace <span aria-hidden="true">↗</span></span>
-          </a>
-          <a class="quick-card" href="https://www.icn.ch/" target="_blank" rel="noopener noreferrer">
-            <span class="quick-card__icon quick-card__icon--blue" aria-hidden="true">02</span>
-            <span class="quick-card__meta">Organización</span>
-            <strong>Consejo Internacional de Enfermeras</strong>
-            <span class="quick-card__foot">Abrir enlace <span aria-hidden="true">↗</span></span>
-          </a>
-          <a class="quick-card" href="./index.html#recursos">
-            <span class="quick-card__icon quick-card__icon--gold" aria-hidden="true">03</span>
-            <span class="quick-card__meta">Documentos</span>
-            <strong>Apuntes y lecturas</strong>
-            <span class="quick-card__foot">Revisar recursos <span aria-hidden="true">↗</span></span>
-          </a>
-          <a class="quick-card" href="./index.html#recursos">
-            <span class="quick-card__icon quick-card__icon--rose" aria-hidden="true">04</span>
-            <span class="quick-card__meta">Visual</span>
-            <strong>Infografías y material gráfico</strong>
-            <span class="quick-card__foot">Revisar recursos <span aria-hidden="true">↗</span></span>
-          </a>
-        </div>
+
+        <section id="panel" class="escala-panel" hidden>
+          <h2 id="titulo"></h2>
+          <p id="descripcion"></p>
+
+          <div class="campo">
+            <label for="caso">Identificador del caso simulado</label>
+            <input id="caso" type="text" maxlength="50" placeholder="Ej. Caso académico 01">
+          </div>
+
+          <form id="formulario">
+            <div id="preguntas"></div>
+            <div class="acciones">
+              <button type="submit">Calcular puntuación</button>
+              <button type="button" id="limpiar" class="secundario">Limpiar</button>
+              <button type="button" id="imprimir" class="secundario">Imprimir</button>
+            </div>
+          </form>
+
+          <div id="resultado" class="resultado" hidden aria-live="polite">
+            <h3>Resultado educativo</h3>
+            <p id="casoResultado"></p>
+            <p id="puntuacion" class="puntuacion"></p>
+            <p id="interpretacion"></p>
+            <p id="recomendacion" class="nota"></p>
+          </div>
+        </section>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container site-footer__main"><a class="brand brand--footer" href="./index.html"><img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente"><span class="brand__copy"><strong>Enfermería</strong><span>Licenciatura en Enfermería</span></span></a></div>
-    <div class="container site-footer__legal"><span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span><span>Diseño y desarrollo: Mtro. Erik Rivera Timal</span></div>
+    <div class="container site-footer__main">
+      <a class="brand brand--footer" href="./index.html">
+        <img src="./img/logo-uo.png" alt="Logotipo oficial de la Universidad de Oriente">
+        <span class="brand__copy">
+          <strong>Enfermería</strong>
+          <span>Licenciatura en Enfermería</span>
+        </span>
+      </a>
+    </div>
+    <div class="container site-footer__legal">
+      <span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span>
+      <span>Diseño y desarrollo: Mtro. Erik Rivera Timal</span>
+    </div>
   </footer>
+
+  <script>
+    "use strict";
+    const datos = {
+      glasgow: {
+        titulo: "Escala de Coma de Glasgow",
+        descripcion: "Selecciona la respuesta observada en cada componente.",
+        preguntas: [
+          { id: "ocular", texto: "Respuesta ocular", opciones: [["Espontánea", 4],["A la voz", 3],["A la presión", 2],["Ninguna", 1]] },
+          { id: "verbal", texto: "Respuesta verbal", opciones: [["Orientada", 5],["Confusa", 4],["Palabras", 3],["Sonidos", 2],["Ninguna", 1]] },
+          { id: "motora", texto: "Respuesta motora", opciones: [["Obedece órdenes", 6],["Localiza la presión", 5],["Flexión normal", 4],["Flexión anormal", 3],["Extensión anormal", 2],["Ninguna", 1]] }
+        ],
+        calcular(v) {
+          const total = v.reduce((a, b) => a + b, 0);
+          let texto;
+          if (total >= 13) texto = "Puntuación de 13 a 15.";
+          else if (total >= 9) texto = "Puntuación de 9 a 12.";
+          else texto = "Puntuación de 3 a 8.";
+          return { total, texto, nota: "Registrar también cada componente por separado. Considerar factores que impidan evaluar las respuestas. Una alteración aguda requiere valoración clínica." };
+        }
+      },
+      braden: {
+        titulo: "Escala de Braden",
+        descripcion: "Versión para adultos: seis dimensiones de riesgo.",
+        preguntas: [
+          { id: "percepcion", texto: "Percepción sensorial", opciones: [["Completamente limitada", 1],["Muy limitada", 2],["Ligeramente limitada", 3],["Sin limitaciones", 4]] },
+          { id: "humedad", texto: "Exposición a la humedad", opciones: [["Constantemente húmeda", 1],["Muy húmeda", 2],["Ocasionalmente húmeda", 3],["Raramente húmeda", 4]] },
+          { id: "actividad", texto: "Actividad", opciones: [["Encamado", 1],["En silla", 2],["Camina ocasionalmente", 3],["Camina frecuentemente", 4]] },
+          { id: "movilidad", texto: "Movilidad", opciones: [["Completamente inmóvil", 1],["Muy limitada", 2],["Ligeramente limitada", 3],["Sin limitaciones", 4]] },
+          { id: "nutricion", texto: "Nutrición", opciones: [["Muy deficiente", 1],["Probablemente inadecuada", 2],["Adecuada", 3],["Excelente", 4]] },
+          { id: "friccion", texto: "Fricción y cizallamiento", opciones: [["Problema", 1],["Problema potencial", 2],["Sin problema aparente", 3]] }
+        ],
+        calcular(v) {
+          const total = v.reduce((a, b) => a + b, 0);
+          let texto;
+          if (total >= 13) texto = "Puntuación de 13 a 15 puntos.";
+          else if (total >= 9) texto = "Puntuación de 9 a 12 puntos.";
+          else texto = "Puntuación de 3 a 8 puntos.";
+          return { total, texto, nota: "Verificar los puntos de corte con el protocolo institucional." };
+        }
+      },
+      morse: {
+        titulo: "Escala de Morse",
+        descripcion: "Selecciona la respuesta correspondiente a cada factor.",
+        preguntas: [
+          { id: "caidas", texto: "Antecedentes de caídas", opciones: [["No", 0],["Sí", 25]] },
+          { id: "diagnostico", texto: "Diagnóstico secundario", opciones: [["No", 0],["Sí", 15]] },
+          { id: "ayuda", texto: "Ayuda para deambular", opciones: [["Ninguna, reposo o asistencia", 0],["Bastón, muletas o andador", 15],["Se apoya en muebles", 30]] },
+          { id: "iv", texto: "Terapia intravenosa o acceso IV", opciones: [["No", 0],["Sí", 20]] },
+          { id: "marcha", texto: "Marcha", opciones: [["Normal, reposo o silla de ruedas", 0],["Débil", 10],["Alterada", 20]] },
+          { id: "mental", texto: "Estado mental", opciones: [["Reconoce sus limitaciones", 0],["Sobreestima sus capacidades u olvida limitaciones", 15]] }
+        ],
+        calcular(v) {
+          const total = v.reduce((a, b) => a + b, 0);
+          let texto;
+          if (total < 25) texto = "Riesgo bajo según el esquema convencional.";
+          else if (total < 45) texto = "Riesgo moderado según el esquema convencional.";
+          else texto = "Riesgo alto según el esquema convencional.";
+          return { total, texto, nota: "Los puntos de corte pueden variar por protocolo." };
+        }
+      },
+      dolor: {
+        titulo: "Escala numérica del dolor",
+        descripcion: "Registra la intensidad del dolor comunicada por el paciente.",
+        preguntas: [{ id: "intensidad", texto: "Intensidad del dolor", opciones: Array.from({ length: 11 }, (_, i) => [i === 0 ? "0 — Sin dolor" : i === 10 ? "10 — Peor dolor imaginable" : `${i} — Intensidad`, i])) }],
+        calcular(v) {
+          const total = v[0];
+          let texto;
+          if (total === 0) texto = "Sin dolor referido.";
+          else if (total <= 3) texto = "Dolor leve, según una clasificación habitual.";
+          else if (total <= 6) texto = "Dolor moderado, según una clasificación habitual.";
+          else texto = "Dolor intenso, según una clasificación habitual.";
+          return { total, texto, nota: "Registrar también localización, características, duración y respuesta a las intervenciones." };
+        }
+      }
+    };
+
+    const panel = document.getElementById("panel");
+    const formulario = document.getElementById("formulario");
+    const preguntas = document.getElementById("preguntas");
+    const resultado = document.getElementById("resultado");
+    let actual = null;
+
+    document.querySelectorAll("[data-escala]").forEach((boton) => {
+      boton.addEventListener("click", () => abrir(boton.dataset.escala));
+    });
+
+    function abrir(nombre) {
+      actual = datos[nombre];
+      document.getElementById("titulo").textContent = actual.titulo;
+      document.getElementById("descripcion").textContent = actual.descripcion;
+      preguntas.replaceChildren();
+      resultado.hidden = true;
+
+      actual.preguntas.forEach((pregunta) => {
+        const campo = document.createElement("div");
+        campo.className = "campo";
+
+        const etiqueta = document.createElement("label");
+        etiqueta.htmlFor = pregunta.id;
+        etiqueta.textContent = pregunta.texto;
+
+        const select = document.createElement("select");
+        select.id = pregunta.id;
+        select.required = true;
+
+        const inicial = document.createElement("option");
+        inicial.value = "";
+        inicial.textContent = "Selecciona una respuesta";
+        inicial.disabled = true;
+        inicial.selected = true;
+        select.appendChild(inicial);
+
+        pregunta.opciones.forEach(([texto, valor]) => {
+          const opcion = document.createElement("option");
+          opcion.value = String(valor);
+          opcion.textContent = `${texto} (${valor} puntos)`;
+          select.appendChild(opcion);
+        });
+
+        campo.append(etiqueta, select);
+        preguntas.appendChild(campo);
+      });
+
+      panel.hidden = false;
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    formulario.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      if (!actual || !formulario.reportValidity()) return;
+
+      const valores = actual.preguntas.map((pregunta) => Number(document.getElementById(pregunta.id).value));
+      const r = actual.calcular(valores);
+
+      document.getElementById("casoResultado").textContent = "Caso: " + (document.getElementById("caso").value.trim() || "Caso simulado sin identificador");
+      document.getElementById("puntuacion").textContent = "Puntuación: " + r.total;
+      document.getElementById("interpretacion").textContent = r.texto;
+      document.getElementById("recomendacion").textContent = r.nota;
+
+      const interpretacion = r.texto.toLowerCase();
+      let nivel = "medio";
+
+      if (actual === datos.glasgow) {
+        if (r.total <= 8) nivel = "alto";
+        else if (r.total <= 12) nivel = "medio";
+        else nivel = "bajo";
+      } else if (interpretacion.includes("riesgo bajo") || interpretacion.includes("sin riesgo") || interpretacion.includes("dolor leve")) {
+        nivel = "bajo";
+      } else if (interpretacion.includes("riesgo alto") || interpretacion.includes("riesgo elevado") || interpretacion.includes("riesgo muy alto") || interpretacion.includes("dolor intenso")) {
+        nivel = "alto";
+      }
+
+      resultado.classList.remove("riesgo-bajo", "riesgo-medio", "riesgo-alto");
+      resultado.classList.add("riesgo-" + nivel);
+
+      let etiquetaRiesgo = resultado.querySelector(".etiqueta-riesgo");
+      if (!etiquetaRiesgo) {
+        etiquetaRiesgo = document.createElement("div");
+        etiquetaRiesgo.className = "etiqueta-riesgo";
+        resultado.prepend(etiquetaRiesgo);
+      }
+
+      etiquetaRiesgo.textContent = nivel === "bajo" ? "RIESGO BAJO" : nivel === "medio" ? "RIESGO MEDIO" : "RIESGO ALTO";
+      resultado.hidden = false;
+      resultado.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    document.getElementById("limpiar").addEventListener("click", () => {
+      formulario.reset();
+      document.getElementById("caso").value = "";
+      resultado.hidden = true;
+    });
+
+    document.getElementById("imprimir").addEventListener("click", () => {
+      if (resultado.hidden) {
+        alert("Primero calcula una puntuación.");
+        return;
+      }
+      window.print();
+    });
+  </script>
 </body>
 </html>
