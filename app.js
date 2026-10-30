@@ -210,7 +210,30 @@
     byId("dialogIndex").textContent = `TEMA ${String(temaActual + 1).padStart(2, "0")} · ${tema.unidad.toUpperCase()}`;
     byId("dialogTitle").textContent = tema.titulo;
     byId("dialogObjective").textContent = `Objetivo de aprendizaje: ${tema.objetivo}`;
-    renderSecciones(byId("dialogSections"), tema, nombresSeccionesTema);
+
+    const contenedor = byId("dialogSections");
+    contenedor.replaceChildren();
+
+    if (tema.imagen || tema.informacionExtra) {
+      const visual = element("section", "dialog-section dialog-section--wide");
+      if (tema.imagen) {
+        const figure = document.createElement("figure");
+        figure.className = "theme-visual";
+        const image = document.createElement("img");
+        image.src = tema.imagen;
+        image.alt = tema.imagenAlt || tema.titulo;
+        figure.append(image);
+        visual.append(figure);
+      }
+      if (tema.informacionExtra) {
+        const note = element("div", "theme-note");
+        addText(note, "p", "", tema.informacionExtra);
+        visual.append(note);
+      }
+      contenedor.append(visual);
+    }
+
+    renderSecciones(contenedor, tema, nombresSeccionesTema);
     actualizarDialogProgreso();
     byId("previousTopic").disabled = temaActual === 0;
     byId("nextTopic").disabled = temaActual === temas.length - 1;
@@ -348,7 +371,7 @@
       if (normalizar(textoBuscable(procedimiento)).includes(query)) resultados.push({ titulo: procedimiento.titulo, tipo: "Procedimiento", resumen: procedimiento.resumen, accion: () => abrirProcedimiento(procedimiento.id) });
     }
     for (const recurso of recursos) {
-      if (normalizar(textoBuscable(recurso)).includes(query)) resultados.push({ titulo: recurso.titulo, tipo: "Recurso", resumen: recurso.descripcion, accion: () => { window.location.hash = "recursos"; filtroRecurso = recurso.tipo; renderRecursos(); } });
+      if (normalizar(textoBuscable(recurso)).includes(query)) resultados.push({ titulo: recurso.titulo, tipo: "Recurso", resumen: recurso.descripcion, accion: () => { window.location.hash = "recursos"; } });
     }
     if (resultados.length === 0) {
       addText(target, "p", "search-empty", "No encontramos coincidencias. Prueba con otro concepto.");
