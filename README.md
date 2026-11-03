@@ -1,4 +1,4 @@
-# Escuela de Enfermería · Universidad de Oriente
+# Licenciatura en Enfermería · Universidad de Oriente
 
 Plataforma educativa de apoyo para estudiantes de Enfermería. Incluye Fundamentos de Enfermería I, guías de estudio, procedimientos, autoevaluación, recursos académicos y una actividad interactiva de clasificación de RPBI.
 

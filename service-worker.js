@@ -1,18 +1,22 @@
-const CACHE_NAME = 'uo-enfermeria-v7';
+const CACHE_NAME = 'uo-enfermeria-v8';
 const APP_FILES = [
   './',
   './index.html',
+  './asignaturas.html',
   './fundamentos.html',
   './procedimientos.html',
   './materiales.html',
+  './material-estudio.html',
   './evaluaciones.html',
   './recursos.html',
+  './escalas.html',
   './simulador.html',
   './contacto.html',
   './acerca.html',
   './estilos.css',
   './app.js',
   './rpbi-game.js',
+  './game-rpbi.js',
   './temas.js',
   './procedimientos.js',
   './evaluaciones.js',

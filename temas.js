@@ -331,7 +331,7 @@ window.UO_TEMAS = [
   },
   {
     id: "muestras-biologicas",
-    titulo: "Muestras biológicas",
+    titulo: "Muestras biológicas · NOM-007-SSA3-2011",
     unidad: "tecnicas",
     resumen: "Principios de identificación, integridad, manejo y traslado conforme al tipo de muestra y protocolo.",
     conceptos: ["Identificación de la persona y la muestra", "Tipo y recipiente", "Etiquetado", "Cadena de transporte"],
@@ -346,7 +346,7 @@ window.UO_TEMAS = [
   },
   {
     id: "rpbi",
-    titulo: "RPBI",
+    titulo: "RPBI · NOM-087-ECOL-SSA1-2002",
     unidad: "tecnicas",
     resumen: "Separación y manejo seguro de residuos peligrosos biológico-infecciosos según normativa aplicable.",
     conceptos: ["Sangre: El tejido hemático con todos sus elementos", "Cepa: Cultivo de microorganismos procedente a un aislamiento", "Órgano: Entidad morfológica compuesta por la agrupación de tejido diferentes que ocurren al desempeño de un trabajo fisiológico",

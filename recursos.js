@@ -8,7 +8,10 @@ window.UO_RECURSOS = [
     descripcion: "Espacio preparado para lecturas y documentos docentes validados.",
     estado: "Pendiente de publicación",
     disponible: false,
-    href: ""
+    href: "",
+    imagen: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80",
+    color: "#f4d96d",
+    fondo: "#fff5ca"
   },
   {
     id: "guia-fundamentos",
@@ -18,7 +21,10 @@ window.UO_RECURSOS = [
     descripcion: "Espacio preparado para incorporar la guía oficial de la asignatura.",
     estado: "Pendiente de publicación",
     disponible: false,
-    href: ""
+    href: "",
+    imagen: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+    color: "#c9d9ff",
+    fondo: "#edf3ff"
   },
   {
     id: "presentacion-unidad",
@@ -28,7 +34,10 @@ window.UO_RECURSOS = [
     descripcion: "Espacio para presentaciones aprobadas por el equipo docente.",
     estado: "Pendiente de publicación",
     disponible: false,
-    href: ""
+    href: "",
+    imagen: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+    color: "#f8c5cc",
+    fondo: "#ffeaf0"
   },
   {
     id: "infografias-cuidado",
@@ -38,7 +47,10 @@ window.UO_RECURSOS = [
     descripcion: "Espacio para esquemas visuales y ayudas de repaso validadas.",
     estado: "Pendiente de publicación",
     disponible: false,
-    href: ""
+    href: "",
+    imagen: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+    color: "#9fd6d6",
+    fondo: "#e9fbfb"
   },
   {
     id: "videos-practica",
@@ -48,7 +60,10 @@ window.UO_RECURSOS = [
     descripcion: "Espacio para demostraciones docentes supervisadas y autorizadas.",
     estado: "Pendiente de publicación",
     disponible: false,
-    href: ""
+    href: "",
+    imagen: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80",
+    color: "#a3d4ff",
+    fondo: "#edf7ff"
   },
   {
     id: "bibliografia-docente",
@@ -58,7 +73,10 @@ window.UO_RECURSOS = [
     descripcion: "Añade aquí las ediciones y lecturas oficiales recomendadas por docentes.",
     estado: "Pendiente de validación",
     disponible: false,
-    href: ""
+    href: "",
+    imagen: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80",
+    color: "#f7d8b6",
+    fondo: "#fff0df"
   },
   {
     id: "oms-seguridad",
@@ -68,7 +86,10 @@ window.UO_RECURSOS = [
     descripcion: "Portal de la OMS con recursos sobre seguridad del paciente.",
     estado: "Enlace externo",
     disponible: true,
-    href: "https://www.who.int/health-topics/patient-safety"
+    href: "https://www.who.int/health-topics/patient-safety",
+    imagen: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80",
+    color: "#8bd4c9",
+    fondo: "#eafaf5"
   },
   {
     id: "cie-enfermeria",
@@ -78,6 +99,9 @@ window.UO_RECURSOS = [
     descripcion: "Recursos y perspectivas de una organización profesional internacional.",
     estado: "Enlace externo",
     disponible: true,
-    href: "https://www.icn.ch/"
+    href: "https://www.icn.ch/",
+    imagen: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80",
+    color: "#d7c2ff",
+    fondo: "#f3ebff"
   }
 ];
