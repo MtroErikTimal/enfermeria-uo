@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d2340">
+  <meta name="description" content="Recursos académicos para estudiantes de enfermería.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./estilos.css">
+  <script src="./temas.js" defer></script>
+  <script src="./procedimientos.js" defer></script>
+  <script src="./evaluaciones.js" defer></script>
+  <script src="./recursos.js" defer></script>
+  <script src="./app.js" defer></script>
+  <title>Recursos | Enfermería UO</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="institutional-bar">
+      <div class="container institutional-bar__inner">
+        <p>Formación con conocimiento, ética y vocación de servicio</p>
+        <a href="./index.html">Licenciatura en Enfermería · Universidad de Oriente</a>
+      </div>
+    </div>
+    <div class="container masthead">
+      <a class="brand" href="./index.html" aria-label="Ir al inicio">
+        <span class="brand__logos">
+          <span class="logo-slot logo-slot--university"><img src="./img/logo-uo.png" alt="Logo Universidad de Oriente"></span>
+          <span class="brand__divider" aria-hidden="true"></span>
+          <span class="logo-slot logo-slot--nursing"><img src="./img/logo-enfermeria.png" alt="Logo licenciatura en Enfermería"></span>
+        </span>
+        <span class="brand__copy">
+          <strong>Universidad de Oriente</strong>
+          <span>Licenciatura en Enfermería</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="button button--subtle header-quick-link" href="./simulador.html">Abrir simulador</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Abrir menú de navegación">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
+      <div class="container primary-nav__inner">
+        <a href="./index.html">Inicio</a>
+        <a href="./fundamentos.html">Fundamentos</a>
+        <a href="./procedimientos.html">Procedimientos</a>
+        <a href="./materiales.html">Material</a>
+        <a href="./evaluaciones.html">Evaluaciones</a>
+        <a href="./recursos.html" class="is-current">Recursos</a>
+        <a href="./simulador.html">Simulador</a>
+        <a href="./contacto.html">Contacto</a>
+        <a href="./acerca.html">Acerca de</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search-section section-shell" aria-labelledby="searchTitle">
+      <div class="container search-panel">
+        <div class="search-panel__intro">
+          <p class="eyebrow">Encuentra lo que necesitas</p>
+          <h1 id="searchTitle">Busca en tu espacio de estudio</h1>
+          <p>Temas, procedimientos, conceptos clave y materiales en un solo lugar.</p>
+        </div>
+        <form class="search-box" id="searchForm" role="search">
+          <label class="visually-hidden" for="siteSearch">Buscar contenidos académicos</label>
+          <span class="search-box__icon" aria-hidden="true">⌕</span>
+          <input id="siteSearch" type="search" placeholder="Ej. signos vitales, higiene, seguridad…" autocomplete="off">
+          <button class="button button--primary" type="submit">Buscar</button>
+        </form>
+        <div class="search-results" id="searchResults" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="resources-section section-shell" id="recursos" aria-labelledby="resourcesTitle">
+      <div class="container">
+        <div class="section-heading section-heading--row">
+          <div><p class="eyebrow">Biblioteca académica</p><h2 id="resourcesTitle">Recursos para acompañar tu formación</h2></div>
+          <p class="section-heading__aside">Una estructura lista para organizar documentos, infografías, videos y referencias académicas.</p>
+        </div>
+        <div class="resource-filters" id="resourceFilters" role="group" aria-label="Filtrar recursos"></div>
+        <div class="resource-grid" id="resourceGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <a class="brand brand--footer" href="./index.html">
+        <img src="./img/logo-uo.png" alt="Logo Universidad de Oriente">
+        <span class="brand__copy"><strong>Universidad de Oriente</strong><span>Licenciatura en Enfermería</span></span>
+      </a>
+      <p>Espacio educativo · Recursos académicos</p>
+      <div class="site-footer__links">
+        <a href="./simulador.html">Simulador</a>
+        <a href="./index.html">Inicio</a>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span>
+      <span>Diseño y desarrollo: Mtro. Erik Rivera Timal</span>
+    </div>
+  </footer>
+
+  <dialog class="content-dialog" id="topicDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-topline"><span class="eyebrow" id="dialogCategory">Fundamentos de Enfermería I</span><button class="dialog-close" id="dialogClose" type="button" data-close-dialog aria-label="Cerrar contenido">×</button></div>
+    <div class="dialog-body">
+      <p class="dialog-index" id="dialogIndex"></p><h2 id="dialogTitle"></h2><p class="dialog-objective" id="dialogObjective"></p>
+      <div class="dialog-progress"><div class="progress-track"><span id="dialogProgressBar"></span></div><span id="dialogProgressText"></span></div>
+      <div class="dialog-content-grid" id="dialogSections"></div>
+    </div>
+    <div class="dialog-actions"><button class="button button--outline" id="previousTopic" type="button">← Anterior</button><button class="button button--primary" id="markStudied" type="button">Marcar como estudiado</button><button class="button button--outline" id="nextTopic" type="button">Siguiente →</button></div>
+  </dialog>
+  <dialog class="content-dialog content-dialog--procedure" id="procedureDialog" aria-labelledby="procedureDialogTitle">
+    <div class="dialog-topline"><span class="eyebrow">Guía académica de procedimiento</span><button class="dialog-close" type="button" data-close-dialog aria-label="Cerrar procedimiento">×</button></div>
+    <div class="dialog-body"><p class="dialog-index" id="procedureCategory"></p><h2 id="procedureDialogTitle"></h2><p class="dialog-objective" id="procedureObjective"></p><div class="dialog-content-grid" id="procedureSections"></div></div>
+  </dialog>
+  <div class="toast-region" id="toastRegion" role="status" aria-live="polite"></div>
+</body>
+</html>

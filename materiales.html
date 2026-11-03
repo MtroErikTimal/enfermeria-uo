@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d2340">
+  <meta name="description" content="Material de estudio para la Licenciatura en Enfermería.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./estilos.css">
+  <script src="./temas.js" defer></script>
+  <script src="./procedimientos.js" defer></script>
+  <script src="./evaluaciones.js" defer></script>
+  <script src="./recursos.js" defer></script>
+  <script src="./app.js" defer></script>
+  <title>Material de estudio | Enfermería UO</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="institutional-bar">
+      <div class="container institutional-bar__inner">
+        <p>Formación con conocimiento, ética y vocación de servicio</p>
+        <a href="./index.html">Licenciatura en Enfermería · Universidad de Oriente</a>
+      </div>
+    </div>
+    <div class="container masthead">
+      <a class="brand" href="./index.html" aria-label="Ir al inicio">
+        <span class="brand__logos">
+          <span class="logo-slot logo-slot--university"><img src="./img/logo-uo.png" alt="Logo Universidad de Oriente"></span>
+          <span class="brand__divider" aria-hidden="true"></span>
+          <span class="logo-slot logo-slot--nursing"><img src="./img/logo-enfermeria.png" alt="Logo licenciatura en Enfermería"></span>
+        </span>
+        <span class="brand__copy">
+          <strong>Universidad de Oriente</strong>
+          <span>Licenciatura en Enfermería</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="button button--subtle header-quick-link" href="./simulador.html">Abrir simulador</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Abrir menú de navegación">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
+      <div class="container primary-nav__inner">
+        <a href="./index.html">Inicio</a>
+        <a href="./fundamentos.html">Fundamentos</a>
+        <a href="./procedimientos.html">Procedimientos</a>
+        <a href="./materiales.html" class="is-current">Material</a>
+        <a href="./evaluaciones.html">Evaluaciones</a>
+        <a href="./recursos.html">Recursos</a>
+        <a href="./simulador.html">Simulador</a>
+        <a href="./contacto.html">Contacto</a>
+        <a href="./acerca.html">Acerca de</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="materials-section section-shell" id="materiales" aria-labelledby="materialsTitle">
+      <div class="container materials-layout">
+        <div>
+          <p class="eyebrow">Organiza tu estudio</p>
+          <h1 id="materialsTitle">Material de estudio</h1>
+          <p class="materials-intro">Consulta las guías y materiales de la asignatura en un solo espacio. Los documentos se incorporarán cuando sean proporcionados y validados por el equipo docente.</p>
+          <a class="text-link" href="./recursos.html">Ver todos los recursos <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="material-list" id="materialList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <a class="brand brand--footer" href="./index.html">
+        <img src="./img/logo-uo.png" alt="Logo Universidad de Oriente">
+        <span class="brand__copy"><strong>Universidad de Oriente</strong><span>Licenciatura en Enfermería</span></span>
+      </a>
+      <p>Espacio educativo · Material de estudio</p>
+      <div class="site-footer__links">
+        <a href="./recursos.html">Recursos</a>
+        <a href="./index.html">Inicio</a>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span>
+      <span>Diseño y desarrollo: Mtro. Erik Rivera Timal</span>
+    </div>
+  </footer>
+
+</body>
+</html>

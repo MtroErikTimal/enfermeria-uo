@@ -227,20 +227,21 @@
   function renderProcedimientos() {
     const grid = byId("procedureGrid");
     const materialList = byId("materialList");
-    if (!grid) return;
-    grid.replaceChildren();
-    for (const procedimiento of procedimientos) {
-      const card = element("article", "procedure-card");
-      addText(card, "span", "procedure-card__tag", procedimiento.categoria);
-      addText(card, "h3", "", procedimiento.titulo);
-      addText(card, "p", "", procedimiento.resumen);
-      const button = element("button", "");
-      button.type = "button";
-      button.append(document.createTextNode("Consultar guía"));
-      addText(button, "span", "", "↗");
-      button.addEventListener("click", () => abrirProcedimiento(procedimiento.id));
-      card.append(button);
-      grid.append(card);
+    if (grid) {
+      grid.replaceChildren();
+      for (const procedimiento of procedimientos) {
+        const card = element("article", "procedure-card");
+        addText(card, "span", "procedure-card__tag", procedimiento.categoria);
+        addText(card, "h3", "", procedimiento.titulo);
+        addText(card, "p", "", procedimiento.resumen);
+        const button = element("button", "");
+        button.type = "button";
+        button.append(document.createTextNode("Consultar guía"));
+        addText(button, "span", "", "↗");
+        button.addEventListener("click", () => abrirProcedimiento(procedimiento.id));
+        card.append(button);
+        grid.append(card);
+      }
     }
     if (materialList) renderMateriales(materialList);
   }
@@ -390,6 +391,7 @@
     const count = byId("assessmentCount");
     if (count) count.textContent = `${preguntas.length} preguntas de práctica`;
     const quiz = byId("quizContent");
+    if (!quiz) return;
     quiz.replaceChildren();
     const start = element("div", "quiz-start");
     addText(start, "p", "quiz-question-count", "Repaso interactivo");
@@ -575,6 +577,16 @@
     const toggle = byId("menuToggle");
     const nav = byId("primaryNavigation");
     if (!toggle || !nav) return;
+
+    const normalizePath = (path) => path.endsWith("/") ? `${path}index.html` : path;
+    const currentPath = normalizePath(window.location.pathname);
+    for (const link of nav.querySelectorAll("a[href]")) {
+      const linkPath = normalizePath(new URL(link.href, window.location.href).pathname);
+      link.classList.toggle("is-current", linkPath === currentPath);
+      if (linkPath === currentPath) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    }
+
     function closeNavigation() {
       nav.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
@@ -592,18 +604,6 @@
     window.addEventListener("resize", () => {
       if (window.innerWidth > 760) closeNavigation();
     });
-    const sections = [...document.querySelectorAll("main section[id]")];
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          for (const link of nav.querySelectorAll("a")) {
-            link.classList.toggle("is-current", link.hash === `#${entry.target.id}`);
-          }
-        }
-      }, { rootMargin: "-20% 0px -70% 0px" });
-      for (const section of sections) observer.observe(section);
-    }
   }
 
   function setupDialogs() {
@@ -615,9 +615,9 @@
         close.addEventListener("click", () => dialog.close());
       }
     }
-    byId("previousTopic").addEventListener("click", () => moverTema(-1));
-    byId("nextTopic").addEventListener("click", () => moverTema(1));
-    byId("markStudied").addEventListener("click", () => {
+    byId("previousTopic")?.addEventListener("click", () => moverTema(-1));
+    byId("nextTopic")?.addEventListener("click", () => moverTema(1));
+    byId("markStudied")?.addEventListener("click", () => {
       if (temaActual === null) return;
       const tema = temas[temaActual];
       const wasStudied = temasCompletados.has(tema.id);
@@ -669,6 +669,15 @@
     });
   }
 
+  function registerServiceWorker() {
+    if (!("serviceWorker" in navigator) || !window.isSecureContext) return;
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./service-worker.js").catch((error) => {
+        console.error("No se pudo habilitar el modo sin conexión:", error);
+      });
+    }, { once: true });
+  }
+
   function iniciar() {
     if (temas.length === 0) {
       console.error("No se encontró el banco de temas UO_TEMAS.");
@@ -686,6 +695,7 @@
     inicializarQuiz();
     setupInstallation();
     actualizarProgreso();
+    registerServiceWorker();
   }
 
   document.addEventListener("DOMContentLoaded", iniciar, { once: true });

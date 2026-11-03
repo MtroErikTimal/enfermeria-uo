@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d2340">
+  <meta name="description" content="Simulador de RPBI, escalas y calculadoras para el estudio académico de enfermería.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./estilos.css">
+  <script src="./temas.js" defer></script>
+  <script src="./procedimientos.js" defer></script>
+  <script src="./evaluaciones.js" defer></script>
+  <script src="./recursos.js" defer></script>
+  <script src="./app.js" defer></script>
+  <script src="./rpbi-game.js" defer></script>
+  <title>Simulador | Enfermería UO</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="institutional-bar">
+      <div class="container institutional-bar__inner">
+        <p>Formación con conocimiento, ética y vocación de servicio</p>
+        <a href="./index.html">Licenciatura en Enfermería · Universidad de Oriente</a>
+      </div>
+    </div>
+    <div class="container masthead">
+      <a class="brand" href="./index.html" aria-label="Ir al inicio">
+        <span class="brand__logos">
+          <span class="logo-slot logo-slot--university"><img src="./img/logo-uo.png" alt="Logo Universidad de Oriente"></span>
+          <span class="brand__divider" aria-hidden="true"></span>
+          <span class="logo-slot logo-slot--nursing"><img src="./img/logo-enfermeria.png" alt="Logo licenciatura en Enfermería"></span>
+        </span>
+        <span class="brand__copy">
+          <strong>Universidad de Oriente</strong>
+          <span>Licenciatura en Enfermería</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="button button--subtle header-quick-link" href="./fundamentos.html">Explorar asignatura</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Abrir menú de navegación">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
+      <div class="container primary-nav__inner">
+        <a href="./index.html">Inicio</a>
+        <a href="./fundamentos.html">Fundamentos</a>
+        <a href="./procedimientos.html">Procedimientos</a>
+        <a href="./materiales.html">Material</a>
+        <a href="./evaluaciones.html">Evaluaciones</a>
+        <a href="./recursos.html">Recursos</a>
+        <a href="./simulador.html" class="is-current">Simulador</a>
+        <a href="./contacto.html">Contacto</a>
+        <a href="./acerca.html">Acerca de</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="container subpage-hero">
+      <div class="subpage-hero__card">
+        <span class="subpage-hero__eyebrow">Simulador clínico</span>
+        <h1 class="subpage-hero__title">RPBI, escalas y calculadoras</h1>
+        <p class="subpage-hero__text">Espacio de práctica para reforzar la respuesta inicial ante emergencias, el uso de escalas de valoración y la aplicación de cálculos básicos de dilución. Se utiliza como apoyo educativo y no sustituye la atención clínica real ni la guía docente institucional.</p>
+      </div>
+    </section>
+
+    <section class="container simulator-layout">
+      <div class="simulator-panel simulator-panel--quiz">
+        <div class="section-heading section-heading--row section-heading--compact">
+          <div>
+            <p class="eyebrow">Repaso general</p>
+            <h2>Examen de repaso</h2>
+          </div>
+          <span class="quiz-badge" id="quizCounter">Pregunta 1/10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-tag" id="questionTag">Fundamentos de Enfermería</p>
+          <h3 id="questionText">Pregunta</h3>
+          <div class="options" id="options"></div>
+          <div class="feedback" id="feedback"></div>
+          <div class="quiz-controls">
+            <button type="button" class="button button--outline" id="prevQuestion">Anterior</button>
+            <button type="button" class="button button--primary" id="nextQuestion">Siguiente</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="simulator-panel simulator-panel--side">
+        <div class="mini-section">
+          <p class="eyebrow">Escalas</p>
+          <h3>Valoración y seguimiento</h3>
+          <div class="scale-list">
+            <article class="scale-item">
+              <span>Escala de dolor</span>
+              <strong>0–10</strong>
+              <small>Ayuda a valorar intensidad, acompañamiento y seguimiento.</small>
+            </article>
+            <article class="scale-item">
+              <span>Glasgow</span>
+              <strong>3–15</strong>
+              <small>Apoya la valoración del nivel de conciencia.</small>
+            </article>
+            <article class="scale-item">
+              <span>Riesgo de caídas</span>
+              <strong>Evaluación</strong>
+              <small>Identifica factores y medidas preventivas básicas.</small>
+            </article>
+          </div>
+        </div>
+
+        <div class="mini-section">
+          <p class="eyebrow">Cálculo</p>
+          <h3>Regla de tres</h3>
+          <form id="simulatorCalculator" novalidate>
+            <div class="calculator-field">
+              <label for="dose">Dosis indicada</label>
+              <div class="calculator-input">
+                <input id="dose" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 250" required>
+                <select id="doseUnit" aria-label="Unidad de la dosis">
+                  <option value="mcg">mcg</option>
+                  <option value="mg" selected>mg</option>
+                  <option value="g">g</option>
+                </select>
+              </div>
+            </div>
+            <div class="calculator-field">
+              <label for="dilutionVolume">Volumen final de dilución</label>
+              <div class="calculator-input">
+                <input id="dilutionVolume" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 5" required>
+                <span class="unit-label">mL</span>
+              </div>
+              <small>Utiliza el volumen final de la preparación.</small>
+            </div>
+            <div class="calculator-field">
+              <label for="presentation">Presentación del medicamento</label>
+              <div class="calculator-input">
+                <input id="presentation" type="number" min="0" step="any" inputmode="decimal" placeholder="Ej. 500" required>
+                <select id="presentationUnit" aria-label="Unidad de la presentación">
+                  <option value="mcg">mcg</option>
+                  <option value="mg" selected>mg</option>
+                  <option value="g">g</option>
+                </select>
+              </div>
+            </div>
+            <div class="calculator-actions">
+              <button class="button button--primary" type="submit">Calcular</button>
+              <button class="button button--outline" id="clearCalculator" type="button">Limpiar</button>
+            </div>
+            <p class="calculator-message" id="calculatorMessage" role="status" aria-live="polite"></p>
+            <div class="calculator-result" id="calculatorResult" hidden aria-live="polite">
+              <span>Volumen calculado</span>
+              <strong id="calculatorValue"></strong>
+              <p id="calculatorDetail"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="container rpbi-section" aria-labelledby="rpbiTitle">
+      <div class="section-heading section-heading--row">
+        <div>
+          <p class="eyebrow">Aprendizaje interactivo</p>
+          <h2 id="rpbiTitle">Misión RPBI</h2>
+        </div>
+        <p class="section-heading__aside">Clasifica cada residuo y recibe retroalimentación para reforzar el aprendizaje.</p>
+      </div>
+      <div id="rpbiGame" aria-live="polite"></div>
+      <p class="rpbi-disclaimer">Actividad educativa basada en la clasificación descrita en la NOM-087-ECOL-SSA1-2002. Verifica siempre la norma vigente y los protocolos institucionales aplicables.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <a class="brand brand--footer" href="./index.html">
+        <img src="./img/logo-uo.png" alt="Logo Universidad de Oriente">
+        <span class="brand__copy"><strong>Universidad de Oriente</strong><span>Licenciatura en Enfermería</span></span>
+      </a>
+      <p>Espacio educativo · Simulador clínico</p>
+      <div class="site-footer__links">
+        <a href="./fundamentos.html">Fundamentos</a>
+        <a href="./contacto.html">Contacto</a>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span>
+      <span>Diseño y desarrollo: Mtro. Erik Rivera Timal</span>
+    </div>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: 'Al detectar a una persona inconsciente sin respiración normal, ¿qué acción es prioridad?',
+        options: [
+          'Activar la ayuda de emergencias y comenzar RCP si corresponde',
+          'Esperar a que responda por sí sola',
+          'Dar agua para estabilizarla',
+          'Dejarla acostada sin moverla'
+        ],
+        answer: 0,
+        feedback: 'La prioridad es valorar la respuesta, solicitar ayuda y aplicar la secuencia de atención según el protocolo. En cualquier situación de ausencia de respiración normal se debe activar la respuesta inmediata.'
+      },
+      {
+        question: '¿Qué indica la correcta identificación del paciente antes de cualquier procedimiento?',
+        options: [
+          'Aumenta riesgos de error y confusión',
+          'Evita errores de identidad y mejora la seguridad',
+          'Solo se hace en procedimientos complejos',
+          'Es opcional si el paciente conoce al profesional'
+        ],
+        answer: 1,
+        feedback: 'La identificación del paciente es un componente central de la seguridad del cuidado, ya que reduce errores y favorece la intervención correcta.'
+      },
+      {
+        question: 'Antes de una técnica invasiva, ¿qué es esencial revisar?',
+        options: [
+          'La hora del día',
+          'La indicación, el protocolo y la preparación del material',
+          'Solo el gusto del paciente',
+          'La disponibilidad de internet'
+        ],
+        answer: 1,
+        feedback: 'La preparación, la indicación y el protocolo aseguran una práctica segura y congruente con la atención del paciente.'
+      },
+      {
+        question: 'En cuanto al lavado de manos, ¿cuál es la acción correcta?',
+        options: [
+          'Lavarlos solo al inicio del turno',
+          'Se realizan antes y después de contacto con el paciente o material contaminado',
+          'Basta con usar gel antibacterial una sola vez',
+          'No es necesario si se usan guantes'
+        ],
+        answer: 1,
+        feedback: 'La higiene de manos es clave en la prevención de infecciones y debe mantenerse en momentos específicos del cuidado.'
+      },
+      {
+        question: '¿Qué debe hacerse antes de administrar un medicamento?',
+        options: [
+          'Confundir la presentación con la dosis adecuada',
+          'Verificar dosis, vía, fecha y paciente',
+          'Doblar la dosis para asegurar efecto',
+          'No registrar nada en la atención'
+        ],
+        answer: 1,
+        feedback: 'La administración segura requiere verificar la indicación, la dosis, la vía, la preparación y la identificación del paciente.'
+      },
+      {
+        question: '¿Cuál es la mejor forma de documentar observaciones clínicas?',
+        options: [
+          'Con lenguaje vago e impreciso',
+          'Con datos claros, objetivos y oportunos',
+          'Solo con opiniones del paciente',
+          'Sin descripción de cambios'
+        ],
+        answer: 1,
+        feedback: 'La documentación precisa favorece la continuidad del cuidado, la comunicación entre el equipo y la seguridad del paciente.'
+      },
+      {
+        question: 'Al valorar signos vitales, ¿qué es lo más apropiado?',
+        options: [
+          'Tomarlos sólo cuando el paciente está estable',
+          'Realizar la medición con técnica correcta y registrar la tendencia',
+          'Sustituirlos por la percepción personal',
+          'Tomarlos solo si el paciente lo solicita'
+        ],
+        answer: 1,
+        feedback: 'Los signos vitales deben medirse con técnica adecuada y analizarse en conjunto para identificar cambios relevantes.'
+      },
+      {
+        question: '¿Qué es un principio clave del cuidado centrado en la persona?',
+        options: [
+          'Atender solo la enfermedad',
+          'Respetar la dignidad, la información y la participación del paciente',
+          'No explicar nada al paciente',
+          'Tomar decisiones sin considerar su opinión'
+        ],
+        answer: 1,
+        feedback: 'El cuidado centrado en la persona reconoce la dignidad, la información clara y la participación activa del paciente en su atención.'
+      },
+      {
+        question: 'Si se observa un riesgo de caída, ¿cuál es la respuesta adecuada?',
+        options: [
+          'Dejarlo sin intervención porque no es urgente',
+          'Identificar factores de riesgo y aplicar medidas de prevención',
+          'Cambiar de tema y continuar la atención',
+          'Ocultar la situación para evitar alarma'
+        ],
+        answer: 1,
+        feedback: 'La prevención de caídas se basa en evaluar factores de riesgo y aplicar medidas adecuadas para proteger al paciente.'
+      },
+      {
+        question: '¿Qué papel cumplen las precauciones en la práctica de enfermería?',
+        options: [
+          'Son opcionales si el paciente está estable',
+          'Disminuyen riesgos y contribuyen a una atención segura',
+          'Solo aplican en situaciones de emergencia',
+          'Se utilizan solo durante procedimientos invasivos'
+        ],
+        answer: 1,
+        feedback: 'Las precauciones y medidas de seguridad son esenciales para reducir riesgos, proteger al paciente y promover una atención responsable.'
+      }
+    ];
+
+    let currentQuestion = 0;
+    let answersGiven = Array(questions.length).fill(null);
+    const optionsContainer = document.getElementById('options');
+    const questionText = document.getElementById('questionText');
+    const feedbackBox = document.getElementById('feedback');
+    const quizCounter = document.getElementById('quizCounter');
+    const nextButton = document.getElementById('nextQuestion');
+    const prevButton = document.getElementById('prevQuestion');
+
+    function renderQuestion() {
+      const q = questions[currentQuestion];
+      questionText.textContent = q.question;
+      quizCounter.textContent = `Pregunta ${currentQuestion + 1}/${questions.length}`;
+      optionsContainer.innerHTML = '';
+      feedbackBox.textContent = '';
+      feedbackBox.classList.remove('is-visible');
+
+      q.options.forEach((option, index) => {
+        const label = document.createElement('label');
+        label.className = 'option-item';
+
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'answer';
+        input.checked = answersGiven[currentQuestion] === index;
+        input.addEventListener('change', () => {
+          answersGiven[currentQuestion] = index;
+          showFeedback(index === q.answer, q.feedback, q.answer);
+        });
+
+        const text = document.createElement('span');
+        text.textContent = option;
+
+        label.appendChild(input);
+        label.appendChild(text);
+        optionsContainer.appendChild(label);
+      });
+
+      prevButton.disabled = currentQuestion === 0;
+      if (currentQuestion === questions.length - 1) {
+        nextButton.textContent = 'Finalizar';
+      } else {
+        nextButton.textContent = 'Siguiente';
+      }
+
+      if (answersGiven[currentQuestion] !== null) {
+        showFeedback(answersGiven[currentQuestion] === q.answer, q.feedback, q.answer);
+      }
+    }
+
+    function showFeedback(isCorrect, feedback, correctIndex) {
+      const correctText = questions[currentQuestion].options[correctIndex];
+      feedbackBox.textContent = isCorrect
+        ? `Respuesta correcta. ${feedback}`
+        : `Respuesta incorrecta. La correcta es: ${correctText}. ${feedback}`;
+      feedbackBox.classList.add('is-visible');
+      feedbackBox.classList.toggle('feedback--correct', isCorrect);
+      feedbackBox.classList.toggle('feedback--incorrect', !isCorrect);
+    }
+
+    nextButton.addEventListener('click', () => {
+      if (answersGiven[currentQuestion] === null) {
+        feedbackBox.textContent = 'Selecciona una respuesta antes de continuar.';
+        feedbackBox.classList.add('is-visible');
+        feedbackBox.classList.remove('feedback--correct');
+        feedbackBox.classList.add('feedback--incorrect');
+        return;
+      }
+
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion += 1;
+        renderQuestion();
+      } else {
+        const correctCount = questions.reduce((count, q, idx) => count + (answersGiven[idx] === q.answer ? 1 : 0), 0);
+        const score = Math.round((correctCount / questions.length) * 100);
+        questionText.textContent = 'Resultado del repaso';
+        optionsContainer.innerHTML = `
+          <div class="result-score">${correctCount}/${questions.length}</div>
+          <p class="result-summary">Tu calificación fue ${score}%. Revisa los procedimientos de fundamentos con atención y fortalece los puntos con retroalimentación.</p>
+        `;
+        feedbackBox.textContent = correctCount >= 8 ? 'Muy bien. Continúa reforzando la base del cuidado con seguridad y responsabilidad.' : 'Sigue revisando los procedimientos, la seguridad del paciente y la valoración clínica para fortalecer tu aprendizaje.';
+        feedbackBox.classList.add('is-visible', 'feedback--correct');
+        nextButton.textContent = 'Reiniciar';
+        nextButton.onclick = () => {
+          currentQuestion = 0;
+          answersGiven = Array(questions.length).fill(null);
+          nextButton.textContent = 'Siguiente';
+          nextButton.onclick = null;
+          prevButton.disabled = true;
+          renderQuestion();
+        };
+        prevButton.disabled = true;
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentQuestion > 0) {
+        currentQuestion -= 1;
+        renderQuestion();
+      }
+    });
+
+    renderQuestion();
+
+    const form = document.getElementById('simulatorCalculator');
+    const doseInput = document.getElementById('dose');
+    const doseUnit = document.getElementById('doseUnit');
+    const volumeInput = document.getElementById('dilutionVolume');
+    const presentationInput = document.getElementById('presentation');
+    const presentationUnit = document.getElementById('presentationUnit');
+    const result = document.getElementById('calculatorResult');
+    const message = document.getElementById('calculatorMessage');
+    const clearButton = document.getElementById('clearCalculator');
+    const toMg = { mcg: 0.001, mg: 1, g: 1000 };
+
+    function clearResult(){
+      result.hidden = true;
+      message.textContent = '';
+    }
+
+    form.addEventListener('input', clearResult);
+    form.addEventListener('change', clearResult);
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const dose = Number(doseInput.value);
+      const volume = Number(volumeInput.value);
+      const presentation = Number(presentationInput.value);
+      if (![dose, volume, presentation].every((value) => Number.isFinite(value) && value > 0)) {
+        clearResult();
+        message.textContent = 'Ingresa cantidades mayores que cero en los tres campos.';
+        return;
+      }
+      const calculated = (dose * toMg[doseUnit.value] * volume) / (presentation * toMg[presentationUnit.value]);
+      if (!Number.isFinite(calculated) || calculated <= 0) {
+        clearResult();
+        message.textContent = 'No se pudo calcular. Verifica los valores y las unidades.';
+        return;
+      }
+      message.textContent = '';
+      document.getElementById('calculatorValue').textContent = `${calculated.toLocaleString('es', { maximumFractionDigits: 6 })} mL`;
+      document.getElementById('calculatorDetail').textContent = `${doseInput.value} ${doseUnit.value} × ${volumeInput.value} mL ÷ ${presentationInput.value} ${presentationUnit.value}`;
+      result.hidden = false;
+    });
+    clearButton.addEventListener('click', () => {
+      form.reset();
+      clearResult();
+      doseInput.focus();
+    });
+  </script>
+</body>
+</html>

@@ -1,9 +1,18 @@
-const CACHE_NAME = 'uo-enfermeria-v5';
+const CACHE_NAME = 'uo-enfermeria-v7';
 const APP_FILES = [
   './',
   './index.html',
+  './fundamentos.html',
+  './procedimientos.html',
+  './materiales.html',
+  './evaluaciones.html',
+  './recursos.html',
+  './simulador.html',
+  './contacto.html',
+  './acerca.html',
   './estilos.css',
   './app.js',
+  './rpbi-game.js',
   './temas.js',
   './procedimientos.js',
   './evaluaciones.js',
@@ -13,7 +22,9 @@ const APP_FILES = [
   './img/logo-uo.png',
   './img/logo-enfermeria.png',
   './img/enfermera-hero.jpg',
-  './img/enfermera-perfil.svg'
+  './img/enfermera-hero.svg',
+  './img/enfermera-perfil.svg',
+  './img/enfermera-perfil.avif'
 ];
 
 self.addEventListener('install', (event) => {

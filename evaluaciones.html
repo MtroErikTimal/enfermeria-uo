@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d2340">
+  <meta name="description" content="Evaluaciones de apoyo para enfermería.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./estilos.css">
+  <script src="./temas.js" defer></script>
+  <script src="./procedimientos.js" defer></script>
+  <script src="./evaluaciones.js" defer></script>
+  <script src="./recursos.js" defer></script>
+  <script src="./app.js" defer></script>
+  <title>Evaluaciones | Enfermería UO</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="institutional-bar">
+      <div class="container institutional-bar__inner">
+        <p>Formación con conocimiento, ética y vocación de servicio</p>
+        <a href="./index.html">Licenciatura en Enfermería · Universidad de Oriente</a>
+      </div>
+    </div>
+    <div class="container masthead">
+      <a class="brand" href="./index.html" aria-label="Ir al inicio">
+        <span class="brand__logos">
+          <span class="logo-slot logo-slot--university"><img src="./img/logo-uo.png" alt="Logo Universidad de Oriente"></span>
+          <span class="brand__divider" aria-hidden="true"></span>
+          <span class="logo-slot logo-slot--nursing"><img src="./img/logo-enfermeria.png" alt="Logo licenciatura en Enfermería"></span>
+        </span>
+        <span class="brand__copy">
+          <strong>Universidad de Oriente</strong>
+          <span>Licenciatura en Enfermería</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="button button--subtle header-quick-link" href="./simulador.html">Abrir simulador</a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Abrir menú de navegación">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="primary-nav" id="primaryNavigation" aria-label="Navegación principal">
+      <div class="container primary-nav__inner">
+        <a href="./index.html">Inicio</a>
+        <a href="./fundamentos.html">Fundamentos</a>
+        <a href="./procedimientos.html">Procedimientos</a>
+        <a href="./materiales.html">Material</a>
+        <a href="./evaluaciones.html" class="is-current">Evaluaciones</a>
+        <a href="./recursos.html">Recursos</a>
+        <a href="./simulador.html">Simulador</a>
+        <a href="./contacto.html">Contacto</a>
+        <a href="./acerca.html">Acerca de</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="assessment-section section-shell section-shell--dark" id="evaluaciones" aria-labelledby="assessmentTitle">
+      <div class="container assessment-layout">
+        <div class="assessment-copy">
+          <p class="eyebrow eyebrow--light">Aprender también es reflexionar</p>
+          <h1 id="assessmentTitle">Pon a prueba<br><span>lo que sabes.</span></h1>
+          <p>Realiza una autoevaluación breve sobre los fundamentos del cuidado. Recibirás retroalimentación inmediata para identificar qué repasar.</p>
+          <div class="assessment-meta"><span>Fundamentos I</span><span>·</span><span id="assessmentCount">Preguntas de práctica</span><span>·</span><span>Sin calificación oficial</span></div>
+        </div>
+        <div class="quiz-card" id="quizCard">
+          <div class="quiz-card__header"><span id="quizStep">Preparación</span><span class="quiz-pill">Autoevaluación</span></div>
+          <div class="quiz-progress" role="progressbar" aria-label="Progreso de la autoevaluación" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><span id="quizProgress"></span></div>
+          <div id="quizContent"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__main">
+      <a class="brand brand--footer" href="./index.html">
+        <img src="./img/logo-uo.png" alt="Logo Universidad de Oriente">
+        <span class="brand__copy"><strong>Universidad de Oriente</strong><span>Licenciatura en Enfermería</span></span>
+      </a>
+      <p>Espacio educativo · Evaluaciones</p>
+      <div class="site-footer__links">
+        <a href="./simulador.html">Simulador</a>
+        <a href="./index.html">Inicio</a>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <span>Contenido educativo de apoyo. Consulta la guía docente y los protocolos institucionales vigentes.</span>
+      <span>Diseño y desarrollo: Mtro. Erik Rivera Timal</span>
+    </div>
+  </footer>
+
+</body>
+</html>
