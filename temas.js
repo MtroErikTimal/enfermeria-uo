@@ -370,7 +370,7 @@ window.UO_TEMAS = [
     unidad: "tecnicas",
     resumen: "Preservar la integridad de la piel,prevenir infecciones,proporcionar confort,favorecer la circulacion sanguinea y promover la autoestima y la dignidad de la persona ",
     conceptos: ["Autonomía y preferencias", "Privacidad", "Higiene de manos y precauciones", "Observación de piel"],
-    objetivo: "Preservar la integridad de la piel,prevenir infecciones,proporcionar confort,favorecer la circulacion sanguinea y promover la autoestima y la dignidad de la persona ",
+    objetivo: "Preservar.. la integridad de la piel,prevenir infecciones,proporcionar confort,favorecer la circulacion sanguinea y promover la autoestima y la dignidad de la persona ",
     introduccion: "Las intervenciones de higiene favorecen comodidad y pueden apoyar la observación. Se adaptan a preferencias, capacidades, condición y protocolos; la persona participa en lo que puede realizar por sí misma.",
     materiales: ["Elementos de higiene acordes con las preferencias y protocolo", "Ropa y toallas limpias", "Equipo de protección según valoración"],
     pasos: ["Valora necesidades, capacidades, preferencias y riesgos.", "Explica la actividad, promueve participación y prepara privacidad y materiales.", "Aplica higiene de manos y medidas de control de infecciones.", "Brinda asistencia respetuosa de la secuencia indicada, manteniendo cubierta a la persona.", "Observa piel y tolerancia; comunica cambios relevantes.", "Deja a la persona segura, cómoda y con objetos necesarios al alcance."],
