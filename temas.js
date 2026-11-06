@@ -66,16 +66,96 @@ window.UO_TEMAS = [
     id: "somatometria",
     titulo: "Somatometría",
     unidad: "valoracion",
-    resumen: "Obtención y registro de medidas corporales con equipo apropiado, privacidad y técnica consistente.",
-    conceptos: ["Peso", "Talla o longitud", "Índice calculado según contexto", "Tendencia y condiciones de medición"],
-    objetivo: "Explicar los principios de una medición somatométrica consistente, respetuosa y contextualizada.",
-    introduccion: "Las medidas corporales pueden apoyar la valoración cuando están indicadas. La técnica, el equipo, la condición de la persona y el contexto influyen en su interpretación.",
-    materiales: ["Báscula y estadímetro apropiados y verificados", "Elementos de limpieza del equipo", "Formato de registro"],
-    pasos: ["Explica el propósito y considera comodidad y privacidad.", "Comprueba el estado del equipo y la técnica indicada para la edad y situación.", "Solicita colaboración y realiza la medición con la posición indicada en la guía.", "Registra valor, unidades, fecha, hora y condiciones relevantes.", "Interpreta únicamente con la referencia clínica y docente correspondiente."],
-    precauciones: ["Solicita ayuda para prevenir caídas o movilizaciones inseguras.", "No realices mediciones que expongan o incomoden innecesariamente a la persona."],
-    seguridad: ["Verifica estabilidad del equipo y protección durante la posición requerida.", "Mantén higiene y limpieza según el protocolo."],
-    errores: ["Omitir unidades o equipo utilizado.", "Comparar mediciones hechas con técnicas diferentes como si fueran equivalentes."],
-    evidencia: "Prepara una lista de verificación de equipo, técnica, privacidad y registro para una medición de práctica."
+
+    resumen: "Conjunto de técnicas que permiten obtener y registrar las medidas corporales de una persona para valorar sus características físicas, crecimiento y estado nutricional. Se realiza utilizando instrumentos adecuados y procedimientos estandarizados para obtener resultados confiables.",
+
+    conceptos: [
+      }
+        nombre: "Peso",
+        descripcion: "Es la medida de la masa corporal de una persona, generalmente expresada en kilogramos. Permite observar cambios en el estado físico y nutricional, así como dar seguimiento a la evolución del paciente."
+        nombre: "Talla o longitud",
+        descripcion: "Es la medición de la estatura o longitud del cuerpo. En adultos generalmente se mide de pie, mientras que en lactantes y personas que no pueden mantenerse de pie se utiliza la medición de longitud en posición acostada."
+        nombre: "Índice de Masa Corporal (IMC)",
+        descripcion: "Es un indicador que relaciona el peso con la estatura de una persona. Se calcula dividiendo el peso en kilogramos entre la talla en metros elevada al cuadrado. Su interpretación depende de la edad y del contexto clínico."
+        nombre: "Perímetro abdominal",
+        descripcion: "Es la medición de la circunferencia del abdomen mediante una cinta métrica. Puede utilizarse como indicador complementario de la distribución de grasa corporal y del riesgo metabólico."
+        nombre: "Perímetro cefálico",
+        descripcion: "Es la medición de la circunferencia de la cabeza, principalmente utilizada durante la infancia para dar seguimiento al crecimiento y desarrollo del cráneo."
+        nombre: "Tendencia y condiciones de medición",
+        descripcion: "Consiste en comparar las medidas obtenidas en diferentes momentos, considerando que se hayan utilizado técnicas, equipos y condiciones similares para identificar cambios en el estado físico del paciente."
+        nombre: "Estado nutricional",
+        descripcion: "Es la condición del organismo relacionada con la ingesta, absorción y utilización de nutrientes. Las medidas somatométricas contribuyen a su valoración junto con otros datos clínicos y alimentarios."
+        nombre: "Instrumentos de medición",
+        descripcion: "Son los equipos utilizados para obtener las medidas corporales, como básculas, estadímetros, infantómetros y cintas métricas. Deben encontrarse en buenas condiciones y utilizarse correctamente."
+}
+
+    objetivo: "Reconocer y aplicar los principios básicos de la somatometría mediante la medición del peso, talla y otros perímetros corporales, para obtener datos confiables que contribuyan a la valoración del estado físico y nutricional del paciente.",
+
+    introduccion: "La somatometría es un procedimiento de valoración de enfermería que permite obtener medidas corporales mediante técnicas e instrumentos específicos. Entre las principales mediciones se encuentran el peso, la talla, el índice de masa corporal y diferentes perímetros corporales. Estos datos ayudan a identificar cambios en el crecimiento, desarrollo y estado nutricional del paciente. Para obtener resultados confiables es importante utilizar equipos adecuados, aplicar una técnica correcta, respetar la privacidad y registrar las mediciones de manera precisa.",
+
+    materiales: [
+      "Báscula clínica para medir el peso corporal.",
+      "Estadímetro para medir la talla en personas que pueden permanecer de pie.",
+      "Infantómetro para medir la longitud de lactantes.",
+      "Cinta métrica flexible y no extensible para medir perímetros corporales.",
+      "Formato de registro de somatometría.",
+      "Calculadora para obtener el índice de masa corporal.",
+      "Elementos de limpieza y desinfección del equipo.",
+      "Equipo de protección personal cuando sea necesario."
+    ],
+
+    pasos: [
+      "Explica al paciente el propósito de las mediciones y solicita su colaboración.",
+      "Garantiza la privacidad, comodidad y seguridad durante el procedimiento.",
+      "Realiza higiene de manos antes de iniciar.",
+      "Verifica que los instrumentos estén limpios, nivelados y en buenas condiciones.",
+      "Comprueba que la báscula marque cero antes de utilizarla.",
+      "Solicita al paciente retirar objetos pesados o accesorios que puedan alterar el resultado, cuando sea posible.",
+      "Realiza la medición del peso con la persona colocada de manera estable sobre la báscula.",
+      "Mide la talla utilizando el estadímetro, manteniendo la posición corporal indicada.",
+      "En lactantes, realiza la medición de longitud con un infantómetro y apoyo adecuado.",
+      "Mide los perímetros corporales cuando estén indicados, utilizando la técnica correspondiente.",
+      "Calcula el IMC cuando corresponda, utilizando el peso en kilogramos y la talla en metros.",
+      "Registra cada resultado con sus unidades, fecha, hora y condiciones relevantes.",
+      "Compara los resultados con referencias clínicas apropiadas para la edad y situación del paciente.",
+      "Limpia y guarda el equipo después de utilizarlo."
+    ],
+
+    precauciones: [
+      "Solicitar ayuda cuando el paciente presente dificultades para mantenerse de pie o movilizarse.",
+      "Evitar realizar mediciones que puedan provocar caídas o lesiones.",
+      "Respetar la privacidad y dignidad del paciente.",
+      "No realizar movimientos forzados durante la medición.",
+      "Utilizar instrumentos adecuados para la edad y condición física.",
+      "Considerar situaciones que puedan modificar los resultados, como edema, embarazo o presencia de dispositivos médicos.",
+      "No interpretar una medición de manera aislada como diagnóstico del estado nutricional."
+    ],
+
+    seguridad: [
+      "Verificar la estabilidad y correcto funcionamiento de los instrumentos.",
+      "Mantener la báscula sobre una superficie firme y nivelada.",
+      "Asegurar que el paciente mantenga una posición estable durante la medición.",
+      "Aplicar higiene de manos antes y después del procedimiento.",
+      "Limpiar y desinfectar los instrumentos de acuerdo con el protocolo institucional.",
+      "Evitar la exposición innecesaria del cuerpo del paciente.",
+      "Registrar los resultados de manera clara y sin modificar los valores obtenidos.",
+      "Proteger la información personal y los registros clínicos."
+    ],
+
+    errores: [
+      "Utilizar básculas o estadímetros sin verificar su funcionamiento.",
+      "No comprobar que la báscula marque cero.",
+      "Medir la talla con una postura corporal incorrecta.",
+      "Omitir las unidades de medida.",
+      "Registrar resultados incorrectos o aproximados sin indicarlo.",
+      "Utilizar instrumentos inadecuados para la edad del paciente.",
+      "Calcular incorrectamente el índice de masa corporal.",
+      "Comparar mediciones realizadas con técnicas diferentes como si fueran equivalentes.",
+      "No registrar la fecha y hora de la medición.",
+      "Ignorar las condiciones físicas que pueden modificar los resultados."
+    ],
+
+    evidencia: "Elabora una lista de verificación para realizar una práctica de somatometría en un paciente simulado. Incluye los materiales necesarios, la técnica de medición del peso y la talla, el cálculo del índice de masa corporal, las medidas de privacidad y seguridad y el registro de los resultados con sus respectivas unidades. Explica la importancia de realizar mediciones precisas y utilizar referencias adecuadas para interpretar los resultados."
   },
   {
     id: "exploracion-fisica",
