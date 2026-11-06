@@ -383,7 +383,7 @@ window.UO_TEMAS = [
     id: "limpieza-desinfeccion",
     titulo: "Limpieza y desinfección",
     unidad: "tecnicas",
-    resumen: "Principios de limpieza de superficies y equipos y uso seguro de productos autorizados.",
+    resumen: "Principios de CAMBIOS limpieza de superficies y equipos y uso seguro de productos autorizados.",
     conceptos: ["Limpieza", "Desinfección", "Tiempo de contacto", "Compatibilidad de materiales"],
     objetivo: "Distinguir la limpieza de la desinfección y reconocer condiciones de uso seguro de un producto conforme a su etiqueta y protocolo.",
     introduccion: "La limpieza retira suciedad y materia orgánica; la desinfección reduce microorganismos según el producto y el uso previsto. Las instrucciones del fabricante y del programa institucional definen aplicación y tiempo de contacto.",
