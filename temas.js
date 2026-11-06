@@ -18,7 +18,7 @@ window.UO_TEMAS = [
   {
     id: "proceso-enfermeria",
     titulo: "Proceso de Enfermería",
-    unidad: "fundamentos....",
+    unidad: "fundamentos.",
     resumen: "Es una herramienta metodológica, para proporcionar cuidados a las personas sanas o enfermas a través de una atención holística, organizada y sistematizada.",
     conceptos: ["Valoración", "Diagnóstico de Enfermería", "Planificación", "Ejecución", "Evaluación"],
     objetivo: "Describir las etapas del Proceso de Enfermería y explicar cómo se relacionan para orientar cuidados individualizados.",
