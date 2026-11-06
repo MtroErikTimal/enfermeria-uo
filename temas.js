@@ -347,10 +347,6 @@ window.UO_TEMAS = [
   {
     id: "rpbi",
     titulo: "RPBI · NOM-087-ECOL-SSA1-2002",
-    <img 
-  src="/imagenes/rpbi.jpg" 
-  alt="Enfermería"
-  width="300"
     unidad: "tecnicas",
     resumen: "Separación y manejo seguro de residuos peligrosos biológico-infecciosos según normativa aplicable.",
     conceptos: ["Sangre: El tejido hemático con todos sus elementos", "Cepa: Cultivo de microorganismos procedente a un aislamiento", "Órgano: Entidad morfológica compuesta por la agrupación de tejido diferentes que ocurren al desempeño de un trabajo fisiológico",
