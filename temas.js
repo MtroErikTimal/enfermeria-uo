@@ -23,7 +23,7 @@ window.UO_TEMAS = [
     conceptos: ["Valoración", "Diagnóstico de Enfermería", "Planificación", "Ejecución", "Evaluación"],
     objetivo: "Describir las etapas del Proceso de Enfermería y explicar cómo se relacionan para orientar cuidados individualizados.",
     introduccion: "El Proceso de Enfermería es un método organizado y continuo de razonamiento clínico. Permite reunir información, reconocer respuestas humanas, planificar cuidados, llevarlos a cabo y evaluar sus resultados.",
-    materiales: ["Caso académico anonimizado", "Formato de valoración indicado en el curso", "Taxonomías autorizadas por la asignatura, cuando correspondan"],
+    materiales: ["Caso académico. anonimizado", "Formato de valoración indicado en el curso", "Taxonomías autorizadas por la asignatura, cuando correspondan"],
     pasos: ["ETAPA 1: Valoración de enfermería Recopila datos pertinentes y distingue los subjetivos de los objetivos.", "Analiza la información sin omitir la perspectiva de la persona, respuestas humanas y fisiopatológicas.", "Etapa 2: Diagnóstico de enfermería, se define como un juicio clínico sobre las respuestas humanas de la persona, familia o comunidad ante proceso vitales o problemas de salud reales o potenciales.", "Establece objetivos medibles e intervenciones individualizadas.", "Documenta acciones y evalúa resultados para revisar el plan."],
     precauciones: ["No inventes datos faltantes ni registres inferencias como hechos.", "Respeta el alcance profesional y las herramientas validadas por el curso."],
     seguridad: ["Verifica identidad, fuentes de información y cambios relevantes.", "Comunica oportunamente los hallazgos que requieren respuesta."],
