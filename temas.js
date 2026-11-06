@@ -389,12 +389,14 @@ window.UO_TEMAS = [
     introduccion: "La limpieza retira suciedad y materia orgánica; la desinfección reduce microorganismos según el producto y el uso previsto. Las instrucciones del fabricante y del programa institucional definen aplicación y tiempo de contacto.",
     materiales: ["Producto institucional autorizado", "Instrucciones del fabricante", "Paños y equipo de protección según protocolo"],
     pasos: ["Identifica superficie o equipo y consulta el producto compatible.", "Prepara materiales y equipo de protección indicados.", "Retira suciedad mediante el método establecido antes de desinfectar, cuando corresponda.", "Aplica el producto y respeta concentración e indicaciones de etiqueta.", "Mantén el tiempo de contacto especificado y registra según política."],
-    precauciones: ["No mezcles productos ni trasvases sin etiquetado y autorización.", "Respeta ventilación, compatibilidad, almacenamiento y vencimiento."],
+    precauciones: ["No respetar el tiempo de contacto.","Preparar soluciones con concentraciones incorrectas.",  "Mezclar sustancias químicas.","Utilizar el mismo paño para diferentes áreas.",  "Almacenar productos sin identificación."],
+    tipos de desinfección: [nombre: "Desinfección de bajo nivel", descripcion: "Elimina la mayoría de bacterias, algunos hongos y virus. Se utiliza en superficies y objetos no críticos."],
+    [nombre: "Desinfección de nivel intermedio, descripcion: "Elimina bacterias, micobacterias, hongos y la mayoría de virus."],
+    [nombre: "Desinfección de alto nivel", descripcion: "Elimina todos los microorganismos, excepto pequeñas cantidades de esporas bacterianas.
     seguridad: ["Sigue la ficha y etiqueta del producto y el protocolo institucional.", "Reporta exposición accidental conforme al plan de seguridad."],
     errores: ["Secar el producto antes del tiempo indicado.", "Usar un producto en una superficie no compatible.", "Confundir limpieza con desinfección."],
-    evidencia: "Compara la etiqueta de un producto autorizado con un protocolo local y resume sus indicaciones de seguridad."
-  },
-  {
+    evidencia:["Compara la etiqueta de un producto autorizado con un protocolo local y resume sus indicaciones de seguridad."],
+  
     id:  "seguridad-paciente",
     titulo: "Principios básicos de seguridad del paciente",
     unidad:  "fundamentos",
@@ -403,7 +405,16 @@ window.UO_TEMAS = [
     objetivo: "Identificar prácticas generales de seguridad del paciente y explicar cuándo detenerse, verificar o escalar una preocupación.",
     introduccion: "La seguridad del paciente es responsabilidad compartida y requiere sistemas de trabajo confiables, comunicación abierta y aprendizaje de incidentes. Los protocolos locales detallan prácticas específicas.",
     materiales: ["Políticas institucionales de seguridad", "Lista de verificación aplicable", "Canal de comunicación y reporte local"],
-    pasos: ["Identifica riesgos del entorno y de la tarea antes de intervenir.", "Verifica identidad y propósito usando el proceso vigente.", "Comunica información relevante de forma clara y confirma los mensajes críticos.", "Aplica precauciones de prevención pertinentes al riesgo.", "Notifica errores, incidentes o condiciones inseguras según la política."],
+    pasos: [ "Realizar higiene de manos y colocarse el equipo de protección personal.", "Preparar los materiales y verificar el producto desinfectante.","Retirar residuos y suciedad visible.","Limpiar la superficie antes de realizar la desinfección.",  "Aplicar el desinfectante siguiendo las indicaciones del fabricante.",  "Respetar el tiempo de contacto indicado en la etiqueta.","Dejar secar o realizar el enjuague si el fabricante lo indica.", "Retirar el equipo de protección y realizar higiene de manos"],
+
+
+  
+  
+
+ 
+ 
+ 
+],"],
     precauciones: ["Consulta a una persona supervisora ante dudas, discrepancias o falta de competencia.", "Aplica protocolos actuales y evita basarte solo en memoria o supuestos."],
     seguridad: ["Fomenta comunicación respetuosa, participación de la persona y notificación sin demora.", "Ante una situación insegura, pausa y solicita apoyo por los canales establecidos."],
     errores: ["Normalizar omisiones o no comunicar un cambio relevante.", "Culpar a una persona sin examinar factores del sistema.", "Omitir verificación por prisa o familiaridad."],
