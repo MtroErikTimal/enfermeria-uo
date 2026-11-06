@@ -368,7 +368,7 @@ window.UO_TEMAS = [
     id: "carro-curaciones",
     titulo: "Carro de curaciones",
     unidad: "tecnicas",
-    resumen: "Organización, verificación y limpieza del carro para apoyar técnicas asépticas según protocolo.",
+    resumen: "Organización,CAMBIOS verificación y limpieza del carro para apoyar técnicas asépticas según protocolo.",
     conceptos: ["Disponibilidad y organización", "Integridad y vigencia", "Limpieza", "Técnica aséptica"],
     objetivo: "Describir una revisión académica del carro de curaciones que preserve organización, limpieza e integridad de insumos.",
     introduccion: "El carro de curaciones reúne materiales utilizados en procedimientos definidos. Su organización concreta corresponde al servicio; las comprobaciones y la limpieza siguen la frecuencia y política institucional.",
