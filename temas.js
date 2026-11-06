@@ -37,7 +37,7 @@ window.UO_TEMAS = [
     resumen: "Registro organizado, oportuno y confidencial de la información y la atención brindada.",
     conceptos: ["Continuidad de la atención", "Registro objetivo y cronológico", "Confidencialidad", "Responsabilidad documental"],
     objetivo: "Reconocer la función del expediente clínico y aplicar principios básicos de privacidad y documentación responsable.",
-    introduccion: "El expediente clínico reúne información relacionada con la atención de salud. Su documentación facilita la comunicación y continuidad del cuidado, y debe proteger la privacidad y cumplir la normativa local vigente.",
+    introduccion: "El expediente clínico CAMBIOS reúne información relacionada con la atención de salud. Su documentación facilita la comunicación y continuidad del cuidado, y debe proteger la privacidad y cumplir la normativa local vigente.",
     normativa: ["NOM-004-SSA3-2012, Del expediente clínico, considerando su vigencia y las disposiciones aplicables.", "Políticas institucionales de documentación, acceso, conservación y protección de datos personales." ],
     elementos: ["Historia clínica", "Notas médicas","Notas de enfermería","Registros de signos vitales", "Indicaciones médicas y registros de su cumplimiento", "Resultados de laboratorio y estudios auxiliares", "Consentimientos informados y otros documentos aplicables"],
     materiales: ["Formato docente de práctica sin identificadores reales", "Ejemplo de registro aprobado para estudio", "Normativa y política institucional aplicable"],
@@ -45,7 +45,7 @@ window.UO_TEMAS = [
     precauciones: ["No utilices datos personales reales en ejercicios académicos.", "No alteres ni compartas registros sin autorización.", "Sigue las reglas locales para correcciones y firmas."],
     seguridad: ["Preserva confidencialidad y acceso autorizado.", "Distingue lo observado de lo referido y evita juicios de valor.", "Documenta en el momento establecido por la política institucional."],
     errores: ["Usar abreviaturas no autorizadas.", "Dejar campos incompletos, registrar opiniones como hechos o documentar antes de realizar una acción."],
-    evidencia: "Redacta un ejemplo académico anonimizado con datos objetivos y señala cómo protegerías la confidencialidad."
+    evidencia: "Redacta un ejemplo académico anonimizado con datos objetivos y señala cómo protegerías la confidencialidad." 
   },
   {
     id: "signos-vitales",
